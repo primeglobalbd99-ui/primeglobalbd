@@ -4,271 +4,253 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prime Global - Visa & Air Ticketing Services | Your Trusted Partner</title>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- FontAwesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary-color: #0b2545;
-            --secondary-color: #134074;
-            --accent-color: #d4af37; /* Premium Gold */
-            --light-bg: #f8f9fa;
-            --dark-text: #1d2d44;
-            --light-text: #ffffff;
-            --card-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            --primary: #0f172a;
+            --secondary: #1e293b;
+            --accent: #d97706;
+            --bg-light: #ffffff;
+            --bg-subtle: #f8fafc;
+            --text-main: #334155;
+            --text-dark: #0f172a;
+            --border-color: #e2e8f0;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+            --shadow-md: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Plus Jakarta Sans', sans-serif;
             scroll-behavior: smooth;
         }
 
         body {
-            color: var(--dark-text);
-            background-color: #fff;
+            background-color: var(--bg-light);
+            color: var(--text-main);
             line-height: 1.6;
         }
 
         /* Top Bar */
         .top-bar {
-            background-color: var(--primary-color);
-            color: var(--light-text);
-            padding: 10px 5%;
+            background-color: var(--primary);
+            color: #94a3b8;
+            padding: 10px 8%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-size: 14px;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+            font-size: 13px;
         }
 
         .top-info span {
             margin-right: 20px;
+            color: #cbd5e1;
         }
 
         .top-info i {
-            color: var(--accent-color);
-            margin-right: 8px;
+            color: var(--accent);
+            margin-right: 6px;
         }
 
         .top-social a {
-            color: var(--light-text);
-            margin-left: 15px;
-            font-size: 16px;
+            color: #cbd5e1;
+            margin-left: 12px;
+            text-decoration: none;
             transition: 0.3s;
         }
 
         .top-social a:hover {
-            color: var(--accent-color);
+            color: #fff;
         }
 
-        /* Header / Navbar */
+        /* Header */
         header {
             background: #ffffff;
-            padding: 15px 5%;
+            padding: 15px 8%;
             display: flex;
             justify-content: space-between;
             align-items: center;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+            border-bottom: 1px solid var(--border-color);
         }
 
-        .logo-container {
+        .logo-box {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 12px;
         }
 
-        .logo-img {
-            height: 60px;
-            width: 60px;
-            object-fit: cover;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        .logo-box img {
+            height: 52px;
+            width: auto;
+            border-radius: 6px;
         }
 
         .logo-text h1 {
-            font-size: 22px;
-            color: var(--primary-color);
-            letter-spacing: 1px;
-            font-weight: 700;
+            font-size: 20px;
+            font-weight: 800;
+            color: var(--primary);
+            letter-spacing: 0.5px;
         }
 
         .logo-text p {
-            font-size: 12px;
-            color: var(--accent-color);
-            font-weight: 600;
+            font-size: 11px;
+            color: var(--accent);
+            font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 1.5px;
         }
 
         nav ul {
             display: flex;
             list-style: none;
-            gap: 25px;
+            gap: 30px;
         }
 
         nav ul li a {
             text-decoration: none;
-            color: var(--dark-text);
-            font-weight: 500;
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: 14px;
             transition: 0.3s;
         }
 
         nav ul li a:hover {
-            color: var(--accent-color);
+            color: var(--accent);
         }
 
-        .btn-primary {
-            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
-            color: var(--light-text);
-            padding: 10px 22px;
-            border-radius: 30px;
+        .btn-btn {
+            background-color: var(--primary);
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 8px;
             text-decoration: none;
             font-weight: 600;
-            border: 1px solid var(--accent-color);
-            transition: 0.3s;
+            font-size: 13px;
             display: inline-flex;
             align-items: center;
             gap: 8px;
+            transition: 0.3s;
         }
 
-        .btn-primary:hover {
-            background: var(--accent-color);
-            color: var(--primary-color);
+        .btn-btn:hover {
+            background-color: var(--accent);
         }
 
-        /* Hero Section */
+        /* Hero */
         .hero {
-            background: linear-gradient(rgba(11, 37, 69, 0.85), rgba(19, 64, 116, 0.85)), url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1600&q=80') center/cover;
-            height: 80vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            background: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.75)), url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1600&q=80') center/cover;
+            padding: 100px 8%;
             text-align: center;
-            color: var(--light-text);
-            padding: 0 20px;
+            color: #fff;
         }
 
-        .hero-content h2 {
-            font-size: 48px;
+        .hero h2 {
+            font-size: 42px;
+            font-weight: 800;
             margin-bottom: 15px;
-            font-weight: 700;
         }
 
-        .hero-content p {
-            font-size: 20px;
-            margin-bottom: 30px;
-            color: #e0e0e0;
+        .hero p {
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: #e2e8f0;
         }
 
-        /* Stats / Counter Section with Spinner Animation */
-        .stats-section {
-            background: var(--primary-color);
-            color: var(--light-text);
-            padding: 50px 5%;
+        /* Spinners / Trust Badges */
+        .trust-section {
+            padding: 40px 8%;
+            background-color: #ffffff;
+            border-bottom: 1px solid var(--border-color);
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 30px;
-            text-align: center;
+            gap: 20px;
         }
 
-        .stat-card {
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 12px;
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            position: relative;
+        .trust-card {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            background: var(--bg-subtle);
         }
 
-        .spinner-icon {
-            font-size: 32px;
-            color: var(--accent-color);
-            margin-bottom: 15px;
+        .spin-icon {
+            font-size: 24px;
+            color: var(--accent);
             animation: spin 3s linear infinite;
         }
 
         @keyframes spin {
-            0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
 
-        .stat-number {
-            font-size: 36px;
+        .trust-info h4 {
+            font-size: 14px;
+            color: var(--text-dark);
             font-weight: 700;
-            color: var(--accent-color);
         }
 
-        .stat-title {
-            font-size: 15px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-top: 5px;
+        .trust-info p {
+            font-size: 12px;
+            color: #64748b;
         }
 
-        /* Services Section */
+        /* Sections */
         .section-padding {
-            padding: 80px 5%;
+            padding: 70px 8%;
         }
 
         .section-title {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 45px;
         }
 
         .section-title h2 {
-            font-size: 36px;
-            color: var(--primary-color);
-            position: relative;
-            display: inline-block;
-            padding-bottom: 10px;
-        }
-
-        .section-title h2::after {
-            content: '';
-            position: absolute;
-            width: 60px;
-            height: 3px;
-            background: var(--accent-color);
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
+            font-size: 30px;
+            color: var(--text-dark);
+            font-weight: 800;
         }
 
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            gap: 25px;
         }
 
         .service-card {
             background: #fff;
-            padding: 35px 25px;
-            border-radius: 15px;
-            box-shadow: var(--card-shadow);
-            border-top: 4px solid var(--accent-color);
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-sm);
             transition: 0.3s;
         }
 
         .service-card:hover {
-            transform: translateY(-10px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--accent);
         }
 
         .service-card i {
-            font-size: 40px;
-            color: var(--secondary-color);
-            margin-bottom: 20px;
+            font-size: 32px;
+            color: var(--accent);
+            margin-bottom: 15px;
         }
 
         .service-card h3 {
-            font-size: 20px;
-            margin-bottom: 15px;
-            color: var(--primary-color);
+            font-size: 18px;
+            color: var(--text-dark);
+            margin-bottom: 10px;
         }
 
         .service-card ul {
@@ -277,517 +259,24 @@
         }
 
         .service-card ul li {
-            padding: 6px 0;
-            font-size: 14px;
-            color: #555;
+            font-size: 13px;
+            padding: 5px 0;
+            color: #475569;
             display: flex;
             align-items: center;
             gap: 8px;
         }
 
-        .service-card ul li i {
-            font-size: 12px;
-            color: var(--accent-color);
-            margin: 0;
+        /* Visas & Destinations */
+        .bg-subtle {
+            background-color: var(--bg-subtle);
         }
 
-        /* Destinations & Requirements Section */
-        .destinations-bg {
-            background-color: var(--light-bg);
-        }
-
-        .destination-cards {
+        .dest-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
+            gap: 25px;
         }
 
         .dest-card {
             background: #fff;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: var(--card-shadow);
-        }
-
-        .dest-img {
-            height: 200px;
-            background-size: cover;
-            background-position: center;
-            position: relative;
-        }
-
-        .dest-badge {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: var(--accent-color);
-            color: var(--primary-color);
-            padding: 5px 12px;
-            font-size: 12px;
-            font-weight: 700;
-            border-radius: 20px;
-        }
-
-        .dest-content {
-            padding: 25px;
-        }
-
-        .dest-content h3 {
-            color: var(--primary-color);
-            margin-bottom: 8px;
-        }
-
-        .attractions {
-            font-size: 13px;
-            color: #777;
-            margin-bottom: 15px;
-            font-style: italic;
-        }
-
-        .req-title {
-            font-weight: 600;
-            font-size: 14px;
-            color: var(--secondary-color);
-            margin-top: 15px;
-            margin-bottom: 8px;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .req-list {
-            font-size: 13px;
-            color: #555;
-            padding-left: 18px;
-        }
-
-        .req-list li {
-            margin-bottom: 5px;
-        }
-
-        /* Air Ticketing & Partners */
-        .airlines-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 20px;
-            align-items: center;
-            margin-top: 30px;
-        }
-
-        .airline-box {
-            background: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-            font-weight: 600;
-            color: var(--primary-color);
-            border: 1px solid #eee;
-            transition: 0.3s;
-        }
-
-        .airline-box:hover {
-            border-color: var(--accent-color);
-            transform: scale(1.05);
-        }
-
-        .airline-box i {
-            font-size: 24px;
-            color: var(--secondary-color);
-            display: block;
-            margin-bottom: 8px;
-        }
-
-        /* Footer */
-        footer {
-            background: var(--primary-color);
-            color: var(--light-text);
-            padding: 60px 5% 20px 5%;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-
-        .footer-about h3, .footer-contact h3, .footer-links h3 {
-            color: var(--accent-color);
-            margin-bottom: 20px;
-            font-size: 18px;
-        }
-
-        .footer-contact p {
-            margin-bottom: 12px;
-            font-size: 14px;
-            display: flex;
-            align-items: flex-start;
-            gap: 10px;
-        }
-
-        .footer-contact i {
-            color: var(--accent-color);
-            margin-top: 4px;
-        }
-
-        .footer-social {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .footer-social a {
-            width: 40px;
-            height: 40px;
-            background: rgba(255,255,255,0.1);
-            color: #fff;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            transition: 0.3s;
-        }
-
-        .footer-social a:hover {
-            background: var(--accent-color);
-            color: var(--primary-color);
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            font-size: 13px;
-            color: #aaa;
-        }
-
-        /* Floating WhatsApp Button */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background-color: #25d366;
-            color: #fff;
-            width: 60px;
-            height: 60px;
-            border-radius: 50px;
-            text-align: center;
-            font-size: 32px;
-            box-shadow: 2px 2px 15px rgba(0,0,0,0.3);
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            transition: 0.3s;
-        }
-
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-        }
-
-        /* Responsive Mobile Menu */
-        @media (max-width: 768px) {
-            nav ul {
-                display: none;
-            }
-            .hero-content h2 {
-                font-size: 32px;
-            }
-            .top-bar {
-                flex-direction: column;
-                gap: 10px;
-                text-align: center;
-            }
-        }
-    </style>
-</head>
-<body>
-
-    <!-- Top Info Bar -->
-    <div class="top-bar">
-        <div class="top-info">
-            <span><i class="fas fa-map-marker-alt"></i> Akter Shopping City, (Lift-05) Modina Market, Sylhet</span>
-            <span><i class="fas fa-phone-alt"></i> +8801620-458326</span>
-        </div>
-        <div class="top-social">
-            <a href="https://www.facebook.com/share/1GQcBEu3CV/?mibextid=wwXIfr" target="_blank"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://www.instagram.com/prime_global12?xtok=MWF5MnE5ZWhjdTdlbA%3D%3D&utm_source=qr" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://wa.me/8801620458326" target="_blank"><i class="fab fa-whatsapp"></i></a>
-        </div>
-    </div>
-
-    <!-- Navigation Bar -->
-    <header>
-        <div class="logo-container">
-            <!-- লোগোর সরাসরি লিংক বসিয়ে দেওয়া হলো -->
-            <img src="https://i.ibb.co/3ykS8vJ/prime-logo.jpg" alt="Prime Global Logo" class="logo-img">
-            <div class="logo-text">
-                <h1>PRIME GLOBAL</h1>
-                <p>Your Trusted Partner</p>
-            </div>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#destinations">Visas</a></li>
-                <li><a href="#airtickets">Air Tickets</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-        <a href="https://wa.me/8801620458326" class="btn-primary" target="_blank">
-            <i class="fab fa-whatsapp"></i> Instant Query
-        </a>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <h2>Seamless Global Travel & Visa Solutions</h2>
-            <p>Expert Visa Processing, Worldwide Medical Assistance & Air Ticketing Services</p>
-            <a href="https://wa.me/8801620458326" class="btn-primary" target="_blank">Consult Our Experts</a>
-        </div>
-    </section>
-
-    <!-- Animated Loading Stats Section -->
-    <section class="stats-section">
-        <div class="stat-card">
-            <i class="fas fa-spinner spinner-icon"></i>
-            <div class="stat-number">99.2%</div>
-            <div class="stat-title">Visa Success Ratio</div>
-        </div>
-        <div class="stat-card">
-            <i class="fas fa-sync-alt spinner-icon"></i>
-            <div class="stat-number">50+</div>
-            <div class="stat-title">Airline Partnerships</div>
-        </div>
-        <div class="stat-card">
-            <i class="fas fa-circle-notch spinner-icon"></i>
-            <div class="stat-number">10,000+</div>
-            <div class="stat-title">Happy Clients</div>
-        </div>
-        <div class="stat-card">
-            <i class="fas fa-compass spinner-icon"></i>
-            <div class="stat-number">24/7</div>
-            <div class="stat-title">Free Counseling</div>
-        </div>
-    </section>
-
-    <!-- Main Services Section -->
-    <section class="section-padding" id="services">
-        <div class="section-title">
-            <h2>Our Specialized Services</h2>
-        </div>
-        <div class="services-grid">
-            <!-- Medical Tourism Card -->
-            <div class="service-card">
-                <i class="fas fa-user-md"></i>
-                <h3>India Medical Tourism</h3>
-                <p>End-to-end medical travel assistance in top Indian hospitals with complete free counseling support.</p>
-                <ul>
-                    <li><i class="fas fa-check"></i> Doctor Appointments</li>
-                    <li><i class="fas fa-check"></i> Hospital Management</li>
-                    <li><i class="fas fa-check"></i> Hotel & Stay Management</li>
-                    <li><i class="fas fa-check"></i> Free Medical Counseling</li>
-                </ul>
-            </div>
-
-            <!-- Indian Visas Card -->
-            <div class="service-card">
-                <i class="fas fa-passport"></i>
-                <h3>Indian Visa Processing</h3>
-                <p>Fast-track and reliable processing for all categories of Indian visas with complete accuracy.</p>
-                <ul>
-                    <li><i class="fas fa-check"></i> Double Entry Visa</li>
-                    <li><i class="fas fa-check"></i> Multiple Entry Visa</li>
-                    <li><i class="fas fa-check"></i> Medical & Attendant Visa</li>
-                    <li><i class="fas fa-check"></i> Tourist & Business Visa</li>
-                </ul>
-            </div>
-
-            <!-- Global Visas Card -->
-            <div class="service-card">
-                <i class="fas fa-globe-asia"></i>
-                <h3>International Tourist & Business Visas</h3>
-                <p>Hassle-free visa application handling for major Asian destinations with high approval rates.</p>
-                <ul>
-                    <li><i class="fas fa-check"></i> Malaysia Tourist & Business Visa</li>
-                    <li><i class="fas fa-check"></i> Thailand Sticker/e-Visa</li>
-                    <li><i class="fas fa-check"></i> China Business & Tourist Visa</li>
-                    <li><i class="fas fa-check"></i> Philippines & Maldives Visas</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- Visa Destinations & Requirements Section -->
-    <section class="section-padding destinations-bg" id="destinations">
-        <div class="section-title">
-            <h2>Popular Destinations & Requirements</h2>
-        </div>
-        <div class="destination-cards">
-            
-            <!-- India -->
-            <div class="dest-card">
-                <div class="dest-img" style="background-image: url('https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=800&q=80');">
-                    <span class="dest-badge">Medical & Tourist</span>
-                </div>
-                <div class="dest-content">
-                    <h3>India</h3>
-                    <div class="attractions"><i class="fas fa-landmark"></i> Taj Mahal, Qutub Minar, Jaipur Palaces</div>
-                    <div class="req-title"><i class="fas fa-file-alt"></i> Required Documents:</div>
-                    <ul class="req-list">
-                        <li>Original Passport (Minimum 6 months validity)</li>
-                        <li>2x2 inch recent photos (White background)</li>
-                        <li>Utility bill copy (Electricity/Gas)</li>
-                        <li>Bank statement / Dollar Endorsement ($150+)</li>
-                        <li>NOC / Trade License / Student ID</li>
-                        <li>Medical invitation letter (For Medical Visa)</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Malaysia -->
-            <div class="dest-card">
-                <div class="dest-img" style="background-image: url('https://images.unsplash.com/photo-1596422846543-75c6fc197f07?auto=format&fit=crop&w=800&q=80');">
-                    <span class="dest-badge">e-Visa / Business</span>
-                </div>
-                <div class="dest-content">
-                    <h3>Malaysia</h3>
-                    <div class="attractions"><i class="fas fa-building"></i> Petronas Twin Towers, Batu Caves, Langkawi</div>
-                    <div class="req-title"><i class="fas fa-file-alt"></i> Required Documents:</div>
-                    <ul class="req-list">
-                        <li>Valid Passport & Old Passports</li>
-                        <li>35x50 mm white background photo</li>
-                        <li>6-month bank statement & solvency certificate</li>
-                        <li>Confirmed return flight ticket & hotel booking</li>
-                        <li>Trade License / NOC & Visiting Card</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Thailand -->
-            <div class="dest-card">
-                <div class="dest-img" style="background-image: url('https://images.unsplash.com/photo-1508009603885-50cf7c579365?auto=format&fit=crop&w=800&q=80');">
-                    <span class="dest-badge">Tourist Visa</span>
-                </div>
-                <div class="dest-content">
-                    <h3>Thailand</h3>
-                    <div class="attractions"><i class="fas fa-utensils"></i> Grand Palace, Phuket Beaches, Chiang Mai</div>
-                    <div class="req-title"><i class="fas fa-file-alt"></i> Required Documents:</div>
-                    <ul class="req-list">
-                        <li>Passport with minimum 6 months validity</li>
-                        <li>35x45 mm recent passport photos</li>
-                        <li>Bank statement (Minimum BDT 60,000+ balance)</li>
-                        <li>Flight itinerary & hotel reservations</li>
-                        <li>Profession proof (NOC / Business Documents)</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- China -->
-            <div class="dest-card">
-                <div class="dest-img" style="background-image: url('https://images.unsplash.com/photo-1508804185872-d7badad00f7d?auto=format&fit=crop&w=800&q=80');">
-                    <span class="dest-badge">Tourist / Business</span>
-                </div>
-                <div class="dest-content">
-                    <h3>China</h3>
-                    <div class="attractions"><i class="fas fa-torii-gate"></i> Great Wall of China, Forbidden City, Shanghai Tower</div>
-                    <div class="req-title"><i class="fas fa-file-alt"></i> Required Documents:</div>
-                    <ul class="req-list">
-                        <li>Original Passport with blank pages</li>
-                        <li>33x48 mm white background photo</li>
-                        <li>Bank statement (7 months, minimum balance BDT 3,00,000)</li>
-                        <li>Invitation letter (For Business Visa)</li>
-                        <li>TIN Certificate & Trade License / NOC</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Maldives & Philippines -->
-            <div class="dest-card">
-                <div class="dest-img" style="background-image: url('https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=800&q=80');">
-                    <span class="dest-badge">Island Gateway</span>
-                </div>
-                <div class="dest-content">
-                    <h3>Maldives & Philippines</h3>
-                    <div class="attractions"><i class="fas fa-umbrella-beach"></i> Male Atolls, Boracay, Palawan Islands</div>
-                    <div class="req-title"><i class="fas fa-file-alt"></i> Required Documents:</div>
-                    <ul class="req-list">
-                        <li>Original Passport</li>
-                        <li>Passport size photographs</li>
-                        <li>Confirmed return flight ticket</li>
-                        <li>Pre-paid hotel reservation proof</li>
-                        <li>Sufficient financial proof</li>
-                    </ul>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Air Ticketing & Partners Section -->
-    <section class="section-padding" id="airtickets">
-        <div class="section-title">
-            <h2>Air Ticketing Services</h2>
-            <p style="text-align: center; color: #666; margin-top: 10px;">We issue tickets for all major global airlines at competitive rates.</p>
-        </div>
-        
-        <div class="airlines-grid">
-            <div class="airline-box"><i class="fas fa-plane"></i> Biman Bangladesh</div>
-            <div class="airline-box"><i class="fas fa-plane"></i> US-Bangla Airlines</div>
-            <div class="airline-box"><i class="fas fa-plane"></i> Air Astra</div>
-            <div class="airline-box"><i class="fas fa-plane"></i> Emirates</div>
-            <div class="airline-box"><i class="fas fa-plane"></i> Qatar Airways</div>
-            <div class="airline-box"><i class="fas fa-plane"></i> Singapore Airlines</div>
-            <div class="airline-box"><i class="fas fa-plane"></i> AirAsia</div>
-            <div class="airline-box"><i class="fas fa-plane"></i> IndiGo</div>
-            <div class="airline-box"><i class="fas fa-plane"></i> Thai Airways</div>
-            <div class="airline-box"><i class="fas fa-plane"></i> Malaysia Airlines</div>
-        </div>
-    </section>
-
-    <!-- Footer Section -->
-    <footer id="contact">
-        <div class="footer-grid">
-            <div class="footer-about">
-                <h3>PRIME GLOBAL</h3>
-                <p>Your trusted agency for visa processing, international travel solutions, India medical tourism management, and worldwide air ticketing.</p>
-                <div class="footer-social">
-                    <a href="https://www.facebook.com/share/1GQcBEu3CV/?mibextid=wwXIfr" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://www.instagram.com/prime_global12?xtok=MWF5MnE5ZWhjdTdlbA%3D%3D&utm_source=qr" target="_blank"><i class="fab fa-instagram"></i></a>
-                    <a href="https://wa.me/8801620458326" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                </div>
-            </div>
-            
-            <div class="footer-contact">
-                <h3>Contact Info</h3>
-                <p><i class="fas fa-map-marker-alt"></i> Akter Shopping City, (Lift-05) Modina Market, Sylhet</p>
-                <p><i class="fas fa-phone-alt"></i> +8801620-458326</p>
-                <p><i class="fab fa-whatsapp"></i> +8801620-458326 (WhatsApp Support)</p>
-            </div>
-
-            <div class="footer-links">
-                <h3>Our Specializations</h3>
-                <p>• India Medical & Doctor Appointment</p>
-                <p>• Double & Multiple Entry Indian Visas</p>
-                <p>• Malaysia, Thailand, China Tourist Visas</p>
-                <p>• Domestic & International Air Ticketing</p>
-            </div>
-        </div>
-        
-        <div class="footer-bottom">
-            <p>&copy; 2026 Prime Global - Visa & Air Ticketing Services. All Rights Reserved. | Slogan: Your Trusted Partner</p>
-        </div>
-    </footer>
-
-    <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/8801620458326" class="whatsapp-float" target="_blank" title="Chat with us on WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-
-</body>
-</html>
