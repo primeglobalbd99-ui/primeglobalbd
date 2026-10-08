@@ -1,331 +1,790 @@
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Prime Global - Visa & Air Ticketing Services</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #f8fafc; color: #1e293b; }
-    .brand-font { font-family: 'Cinzel', serif; }
-    .spinner-ring { border: 3px solid rgba(14, 116, 144, 0.1); border-left-color: #0e7490; border-radius: 50%; width: 50px; height: 50px; animation: spin 1.2s linear infinite; }
-    @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-    .glass-card { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border: 1px solid rgba(226, 232, 240, 0.8); }
-    [contenteditable="true"] { outline: 2px dashed #0e7490 !important; background-color: rgba(14, 116, 144, 0.05); padding: 2px 4px; border-radius: 4px; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime Global - Visa & Air Ticketing Services | Your Trusted Partner</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #0b2545;
+            --secondary-color: #134074;
+            --accent-color: #d4af37; /* Premium Gold */
+            --light-bg: #f8f9fa;
+            --dark-text: #1d2d44;
+            --light-text: #ffffff;
+            --card-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            color: var(--dark-text);
+            background-color: #fff;
+            line-height: 1.6;
+        }
+
+        /* Top Bar */
+        .top-bar {
+            background-color: var(--primary-color);
+            color: var(--light-text);
+            padding: 10px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .top-info span {
+            margin-right: 20px;
+        }
+
+        .top-info i {
+            color: var(--accent-color);
+            margin-right: 8px;
+        }
+
+        .top-social a {
+            color: var(--light-text);
+            margin-left: 15px;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        .top-social a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Header / Navbar */
+        header {
+            background: #ffffff;
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-img {
+            height: 60px;
+            width: auto;
+            border-radius: 5px;
+        }
+
+        .logo-text h1 {
+            font-size: 22px;
+            color: var(--primary-color);
+            letter-spacing: 1px;
+            font-weight: 700;
+        }
+
+        .logo-text p {
+            font-size: 12px;
+            color: var(--accent-color);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark-text);
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            color: var(--light-text);
+            padding: 10px 22px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            border: 1px solid var(--accent-color);
+            transition: 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-color);
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(11, 37, 69, 0.85), rgba(19, 64, 116, 0.85)), url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1600&q=80') center/cover;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--light-text);
+            padding: 0 20px;
+        }
+
+        .hero-content h2 {
+            font-size: 48px;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .hero-content p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            color: #e0e0e0;
+        }
+
+        /* Stats / Counter Section with Spinner Animation */
+        .stats-section {
+            background: var(--primary-color);
+            color: var(--light-text);
+            padding: 50px 5%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+
+        .stat-card {
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            position: relative;
+        }
+
+        .spinner-icon {
+            font-size: 32px;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+            animation: spin 3s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .stat-number {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--accent-color);
+        }
+
+        .stat-title {
+            font-size: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 5px;
+        }
+
+        /* Services Section */
+        .section-padding {
+            padding: 80px 5%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            color: var(--primary-color);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 3px;
+            background: var(--accent-color);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: #fff;
+            padding: 35px 25px;
+            border-radius: 15px;
+            box-shadow: var(--card-shadow);
+            border-top: 4px solid var(--accent-color);
+            transition: 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .service-card i {
+            font-size: 40px;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .service-card ul {
+            list-style: none;
+            margin-top: 15px;
+        }
+
+        .service-card ul li {
+            padding: 6px 0;
+            font-size: 14px;
+            color: #555;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .service-card ul li i {
+            font-size: 12px;
+            color: var(--accent-color);
+            margin: 0;
+        }
+
+        /* Destinations & Requirements Section */
+        .destinations-bg {
+            background-color: var(--light-bg);
+        }
+
+        .destination-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .dest-card {
+            background: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+        }
+
+        .dest-img {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .dest-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--accent-color);
+            color: var(--primary-color);
+            padding: 5px 12px;
+            font-size: 12px;
+            font-weight: 700;
+            border-radius: 20px;
+        }
+
+        .dest-content {
+            padding: 25px;
+        }
+
+        .dest-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 8px;
+        }
+
+        .attractions {
+            font-size: 13px;
+            color: #777;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        .req-title {
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--secondary-color);
+            margin-top: 15px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .req-list {
+            font-size: 13px;
+            color: #555;
+            padding-left: 18px;
+        }
+
+        .req-list li {
+            margin-bottom: 5px;
+        }
+
+        /* Air Ticketing & Partners */
+        .airlines-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            align-items: center;
+            margin-top: 30px;
+        }
+
+        .airline-box {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            font-weight: 600;
+            color: var(--primary-color);
+            border: 1px solid #eee;
+            transition: 0.3s;
+        }
+
+        .airline-box:hover {
+            border-color: var(--accent-color);
+            transform: scale(1.05);
+        }
+
+        .airline-box i {
+            font-size: 24px;
+            color: var(--secondary-color);
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-color);
+            color: var(--light-text);
+            padding: 60px 5% 20px 5%;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-about h3, .footer-contact h3, .footer-links h3 {
+            color: var(--accent-color);
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        .footer-contact p {
+            margin-bottom: 12px;
+            font-size: 14px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .footer-contact i {
+            color: var(--accent-color);
+            margin-top: 4px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .footer-social a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .footer-social a:hover {
+            background: var(--accent-color);
+            color: var(--primary-color);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 13px;
+            color: #aaa;
+        }
+
+        /* Floating WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: #fff;
+            width: 60px;
+            height: 60px;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 32px;
+            box-shadow: 2px 2px 15px rgba(0,0,0,0.3);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+
+        /* Responsive Mobile Menu */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+            .hero-content h2 {
+                font-size: 32px;
+            }
+            .top-bar {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+        }
+    </style>
 </head>
-<body class="bg-slate-50 text-slate-800 antialiased">
+<body>
 
-  <!-- Admin Bar -->
-  <div class="bg-slate-900 text-white py-2 px-4 text-xs flex justify-between items-center sticky top-0 z-50 shadow-md">
-    <div class="flex items-center space-x-2">
-      <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-      <span class="font-medium text-slate-300">প্রাইম গ্লোবাল অ্যাডমিন কন্ট্রোল</span>
-    </div>
-    <div class="flex space-x-3">
-      <button onclick="toggleEditMode()" id="editBtn" class="bg-cyan-600 hover:bg-cyan-500 text-white px-3 py-1 rounded transition flex items-center gap-1 font-semibold">
-        <i class="fa-solid fa-pen-to-square"></i> <span id="editBtnText">কাস্টমাইজড এডিট মোড</span>
-      </button>
-      <button onclick="saveEdits()" class="bg-emerald-600 hover:bg-emerald-500 text-white px-3 py-1 rounded transition flex items-center gap-1 font-semibold">
-        <i class="fa-solid fa-floppy-disk"></i> সেভ করুন
-      </button>
-    </div>
-  </div>
-
-  <!-- Header Section -->
-  <header class="bg-white border-b border-slate-200 sticky top-9 z-40 shadow-sm">
-    <div class="max-w-7xl mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center gap-4">
-      
-      <!-- Brand Logo -->
-      <div class="flex items-center gap-4">
-        <div class="w-16 h-16 bg-gradient-to-br from-slate-800 to-slate-950 rounded-xl p-2 shadow-lg flex items-center justify-center">
-          <svg viewBox="0 0 200 200" class="w-full h-full text-slate-200">
-            <path d="M 30,110 L 170,30 L 110,170 L 90,120 Z" fill="none" stroke="currentColor" stroke-width="12" stroke-linejoin="round"/>
-            <path d="M 90,120 L 170,30" stroke="currentColor" stroke-width="10"/>
-            <path d="M 70,140 L 110,180 L 180,90" fill="none" stroke="#38bdf8" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
+    <!-- Top Info Bar -->
+    <div class="top-bar">
+        <div class="top-info">
+            <span><i class="fas fa-map-marker-alt"></i> Akter Shopping City, (Lift-05) Modina Market, Sylhet</span>
+            <span><i class="fas fa-phone-alt"></i> +8801620-458326</span>
         </div>
-        <div>
-          <h1 class="brand-font text-2xl md:text-3xl font-bold tracking-wider text-slate-900 editable" id="brandTitle">PRIME GLOBAL</h1>
-          <p class="text-xs md:text-sm text-cyan-700 font-bold tracking-widest uppercase editable" id="brandSub">VISA & AIR TICKETING SERVICES</p>
-          <p class="text-xs text-slate-500 font-medium italic editable" id="brandTagline">Your Trusted Partner</p>
+        <div class="top-social">
+            <a href="https://www.facebook.com/share/1GQcBEu3CV/?mibextid=wwXIfr" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/prime_global12?xtok=MWF5MnE5ZWhjdTdlbA%3D%3D&utm_source=qr" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/8801620458326" target="_blank"><i class="fab fa-whatsapp"></i></a>
         </div>
-      </div>
+    </div>
 
-      <!-- Quick Contact Info -->
-      <div class="flex flex-wrap items-center gap-6 text-sm">
-        <a href="https://wa.me/8801620458326" target="_blank" class="flex items-center gap-2 text-emerald-600 font-semibold hover:text-emerald-700 bg-emerald-50 px-3 py-1.5 rounded-lg border border-emerald-200">
-          <i class="fa-brands fa-whatsapp text-lg"></i>
-          <span class="editable" id="phoneText">+880 1620-458326</span>
+    <!-- Navigation Bar -->
+    <header>
+        <div class="logo-container">
+            <img src="image.png" alt="Prime Global Logo" class="logo-img">
+            <div class="logo-text">
+                <h1>PRIME GLOBAL</h1>
+                <p>Your Trusted Partner</p>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#destinations">Visas</a></li>
+                <li><a href="#airtickets">Air Tickets</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <a href="https://wa.me/8801620458326" class="btn-primary" target="_blank">
+            <i class="fab fa-whatsapp"></i> Instant Query
         </a>
-        <div class="hidden lg:flex flex-col text-slate-600 text-xs border-l border-slate-200 pl-4">
-          <span class="font-semibold text-slate-800">অফিস লোকেশন:</span>
-          <span class="editable" id="headerAddr">Akter Shopping City (Lift-05), Modina Market, Sylhet</span>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h2>Seamless Global Travel & Visa Solutions</h2>
+            <p>Expert Visa Processing, Worldwide Medical Assistance & Air Ticketing Services</p>
+            <a href="https://wa.me/8801620458326" class="btn-primary" target="_blank">Consult Our Experts</a>
         </div>
-        <div class="flex items-center gap-3 text-lg text-slate-600">
-          <a href="https://www.facebook.com/profile.php?id=61594384176682" target="_blank" class="hover:text-blue-600 transition"><i class="fa-brands fa-facebook"></i></a>
-          <a href="https://www.instagram.com/prime_global12?psln=MTF2OXRpcTIwcGIxMA==" target="_blank" class="hover:text-pink-600 transition"><i class="fa-brands fa-instagram"></i></a>
+    </section>
+
+    <!-- Animated Loading Stats Section -->
+    <section class="stats-section">
+        <div class="stat-card">
+            <i class="fas fa-spinner spinner-icon"></i>
+            <div class="stat-number">99.2%</div>
+            <div class="stat-title">Visa Success Ratio</div>
         </div>
-      </div>
-
-    </div>
-  </header>
-
-  <!-- Hero & Success Ratio Section -->
-  <section class="relative bg-gradient-to-b from-slate-900 to-slate-800 text-white py-12 px-4">
-    <div class="max-w-7xl mx-auto">
-      
-      <!-- Continuous Loading Spinner Success Ratios -->
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
-        <div class="glass-card bg-slate-800/80 p-4 rounded-xl border border-slate-700 text-center flex flex-col items-center">
-          <div class="relative flex items-center justify-center my-2">
-            <div class="spinner-ring"></div>
-            <span class="absolute font-bold text-cyan-400 text-sm">99%</span>
-          </div>
-          <p class="text-xs text-slate-300 font-semibold mt-1">Visa Success Ratio</p>
+        <div class="stat-card">
+            <i class="fas fa-sync-alt spinner-icon"></i>
+            <div class="stat-number">50+</div>
+            <div class="stat-title">Airline Partnerships</div>
         </div>
-        <div class="glass-card bg-slate-800/80 p-4 rounded-xl border border-slate-700 text-center flex flex-col items-center">
-          <div class="relative flex items-center justify-center my-2">
-            <div class="spinner-ring"></div>
-            <span class="absolute font-bold text-emerald-400 text-sm">100%</span>
-          </div>
-          <p class="text-xs text-slate-300 font-semibold mt-1">Free Medical Support</p>
+        <div class="stat-card">
+            <i class="fas fa-circle-notch spinner-icon"></i>
+            <div class="stat-number">10,000+</div>
+            <div class="stat-title">Happy Clients</div>
         </div>
-        <div class="glass-card bg-slate-800/80 p-4 rounded-xl border border-slate-700 text-center flex flex-col items-center">
-          <div class="relative flex items-center justify-center my-2">
-            <div class="spinner-ring"></div>
-            <span class="absolute font-bold text-amber-400 text-sm">24/7</span>
-          </div>
-          <p class="text-xs text-slate-300 font-semibold mt-1">Air Ticketing Support</p>
+        <div class="stat-card">
+            <i class="fas fa-compass spinner-icon"></i>
+            <div class="stat-number">24/7</div>
+            <div class="stat-title">Free Counseling</div>
         </div>
-        <div class="glass-card bg-slate-800/80 p-4 rounded-xl border border-slate-700 text-center flex flex-col items-center">
-          <div class="relative flex items-center justify-center my-2">
-            <div class="spinner-ring"></div>
-            <span class="absolute font-bold text-purple-400 text-sm">Fast</span>
-          </div>
-          <p class="text-xs text-slate-300 font-semibold mt-1">Document Apostille</p>
+    </section>
+
+    <!-- Main Services Section -->
+    <section class="section-padding" id="services">
+        <div class="section-title">
+            <h2>Our Specialized Services</h2>
         </div>
-      </div>
+        <div class="services-grid">
+            <!-- Medical Tourism Card -->
+            <div class="service-card">
+                <i class="fas fa-user-md"></i>
+                <h3>India Medical Tourism</h3>
+                <p>End-to-end medical travel assistance in top Indian hospitals with complete free counseling support.</p>
+                <ul>
+                    <li><i class="fas fa-check"></i> Doctor Appointments</li>
+                    <li><i class="fas fa-check"></i> Hospital Management</li>
+                    <li><i class="fas fa-check"></i> Hotel & Stay Management</li>
+                    <li><i class="fas fa-check"></i> Free Medical Counseling</li>
+                </ul>
+            </div>
 
-      <!-- Main Banner Text -->
-      <div class="text-center max-w-3xl mx-auto my-6">
-        <h2 class="text-2xl md:text-4xl font-extrabold mb-4 leading-tight editable" id="heroTitle">
-          আপনার বিশ্বস্ত ভিসা এবং এয়ার টিকিটিং সেবাদাতা প্রতিষ্ঠান
-        </h2>
-        <p class="text-slate-300 text-sm md:text-base leading-relaxed mb-6 editable" id="heroDesc">
-          ইন্ডিয়ান ভিসা, ফ্রি মেডিকেল অ্যাপয়েন্টমেন্ট, মালয়েশিয়া, থাইল্যান্ড, চায়না ও মালদ্বীপ ট্যুরিস্ট ভিসা এবং এয়ার টিকিটিংয়ের জন্য সিলেট থেকে বিশ্বস্ত সার্ভিস।
-        </p>
-        <a href="https://wa.me/8801620458326" target="_blank" class="inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-white font-bold px-6 py-3 rounded-full shadow-lg transition">
-          <i class="fa-brands fa-whatsapp text-xl"></i> সরাসরি কথা বলুন
-        </a>
-      </div>
+            <!-- Indian Visas Card -->
+            <div class="service-card">
+                <i class="fas fa-passport"></i>
+                <h3>Indian Visa Processing</h3>
+                <p>Fast-track and reliable processing for all categories of Indian visas with complete accuracy.</p>
+                <ul>
+                    <li><i class="fas fa-check"></i> Double Entry Visa</li>
+                    <li><i class="fas fa-check"></i> Multiple Entry Visa</li>
+                    <li><i class="fas fa-check"></i> Medical & Attendant Visa</li>
+                    <li><i class="fas fa-check"></i> Tourist & Business Visa</li>
+                </ul>
+            </div>
 
-    </div>
-  </section>
-
-  <!-- Indian Visa & Free Medical Support -->
-  <section class="max-w-7xl mx-auto px-4 -mt-6 relative z-10 mb-12">
-    <div class="bg-white rounded-2xl shadow-xl border border-cyan-100 p-6 md:p-8">
-      <div class="flex items-center gap-3 mb-4">
-        <div class="w-10 h-10 rounded-full bg-cyan-100 text-cyan-700 flex items-center justify-center text-xl">
-          <i class="fa-solid fa-file-medical"></i>
+            <!-- Global Visas Card -->
+            <div class="service-card">
+                <i class="fas fa-globe-asia"></i>
+                <h3>International Tourist & Business Visas</h3>
+                <p>Hassle-free visa application handling for major Asian destinations with high approval rates.</p>
+                <ul>
+                    <li><i class="fas fa-check"></i> Malaysia Tourist & Business Visa</li>
+                    <li><i class="fas fa-check"></i> Thailand Sticker/e-Visa</li>
+                    <li><i class="fas fa-check"></i> China Business & Tourist Visa</li>
+                    <li><i class="fas fa-check"></i> Philippines & Maldives Visas</li>
+                </ul>
+            </div>
         </div>
-        <div>
-          <h3 class="text-xl font-bold text-slate-900 editable" id="indiaHeading">ইন্ডিয়ান ভিসা এবং ১০০% ফ্রী মেডিকেল সাপোর্ট</h3>
-          <p class="text-xs text-slate-500">India Medical & Visa Processing Services</p>
+    </section>
+
+    <!-- Visa Destinations & Requirements Section -->
+    <section class="section-padding destinations-bg" id="destinations">
+        <div class="section-title">
+            <h2>Popular Destinations & Requirements</h2>
         </div>
-      </div>
+        <div class="destination-cards">
+            
+            <!-- India -->
+            <div class="dest-card">
+                <div class="dest-img" style="background-image: url('https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=800&q=80');">
+                    <span class="dest-badge">Medical & Tourist</span>
+                </div>
+                <div class="dest-content">
+                    <h3>India</h3>
+                    <div class="attractions"><i class="fas fa-landmark"></i> Taj Mahal, Qutub Minar, Jaipur Palaces</div>
+                    <div class="req-title"><i class="fas fa-file-alt"></i> Required Documents:</div>
+                    <ul class="req-list">
+                        <li>Original Passport (Minimum 6 months validity)</li>
+                        <li>2x2 inch recent photos (White background)</li>
+                        <li>Utility bill copy (Electricity/Gas)</li>
+                        <li>Bank statement / Dollar Endorsement ($150+)</li>
+                        <li>NOC / Trade License / Student ID</li>
+                        <li>Medical invitation letter (For Medical Visa)</li>
+                    </ul>
+                </div>
+            </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 my-4">
-        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
-          <h4 class="font-bold text-slate-800 mb-2 flex items-center gap-2">
-            <i class="fa-solid fa-passport text-cyan-600"></i> Multiple Entry Visa
-          </h4>
-          <p class="text-xs text-slate-600 leading-relaxed editable" id="indiaMult">
-            ১ থেকে ৫ বছরের মাল্টিপল এন্ট্রি ভিসা প্রসেসিং সহায়তা, অনলাইন ফর্ম পূরণ ও সঠিক অ্যাপয়েন্টমেন্ট গাইডলাইন।
-          </p>
+            <!-- Malaysia -->
+            <div class="dest-card">
+                <div class="dest-img" style="background-image: url('https://images.unsplash.com/photo-1596422846543-75c6fc197f07?auto=format&fit=crop&w=800&q=80');">
+                    <span class="dest-badge">e-Visa / Business</span>
+                </div>
+                <div class="dest-content">
+                    <h3>Malaysia</h3>
+                    <div class="attractions"><i class="fas fa-building"></i> Petronas Twin Towers, Batu Caves, Langkawi</div>
+                    <div class="req-title"><i class="fas fa-file-alt"></i> Required Documents:</div>
+                    <ul class="req-list">
+                        <li>Valid Passport & Old Passports</li>
+                        <li>35x50 mm white background photo</li>
+                        <li>6-month bank statement & solvency certificate</li>
+                        <li>Confirmed return flight ticket & hotel booking</li>
+                        <li>Trade License / NOC & Visiting Card</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Thailand -->
+            <div class="dest-card">
+                <div class="dest-img" style="background-image: url('https://images.unsplash.com/photo-1508009603885-50cf7c579365?auto=format&fit=crop&w=800&q=80');">
+                    <span class="dest-badge">Tourist Visa</span>
+                </div>
+                <div class="dest-content">
+                    <h3>Thailand</h3>
+                    <div class="attractions"><i class="fas fa-utensils"></i> Grand Palace, Phuket Beaches, Chiang Mai</div>
+                    <div class="req-title"><i class="fas fa-file-alt"></i> Required Documents:</div>
+                    <ul class="req-list">
+                        <li>Passport with minimum 6 months validity</li>
+                        <li>35x45 mm recent passport photos</li>
+                        <li>Bank statement (Minimum BDT 60,000+ balance)</li>
+                        <li>Flight itinerary & hotel reservations</li>
+                        <li>Profession proof (NOC / Business Documents)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- China -->
+            <div class="dest-card">
+                <div class="dest-img" style="background-image: url('https://images.unsplash.com/photo-1508804185872-d7badad00f7d?auto=format&fit=crop&w=800&q=80');">
+                    <span class="dest-badge">Tourist / Business</span>
+                </div>
+                <div class="dest-content">
+                    <h3>China</h3>
+                    <div class="attractions"><i class="fas fa-torii-gate"></i> Great Wall of China, Forbidden City, Shanghai Tower</div>
+                    <div class="req-title"><i class="fas fa-file-alt"></i> Required Documents:</div>
+                    <ul class="req-list">
+                        <li>Original Passport with blank pages</li>
+                        <li>33x48 mm white background photo</li>
+                        <li>Bank statement (7 months, minimum balance BDT 3,00,000)</li>
+                        <li>Invitation letter (For Business Visa)</li>
+                        <li>TIN Certificate & Trade License / NOC</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Maldives & Philippines -->
+            <div class="dest-card">
+                <div class="dest-img" style="background-image: url('https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=800&q=80');">
+                    <span class="dest-badge">Island Gateway</span>
+                </div>
+                <div class="dest-content">
+                    <h3>Maldives & Philippines</h3>
+                    <div class="attractions"><i class="fas fa-umbrella-beach"></i> Male Atolls, Boracay, Palawan Islands</div>
+                    <div class="req-title"><i class="fas fa-file-alt"></i> Required Documents:</div>
+                    <ul class="req-list">
+                        <li>Original Passport</li>
+                        <li>Passport size photographs</li>
+                        <li>Confirmed return flight ticket</li>
+                        <li>Pre-paid hotel reservation proof</li>
+                        <li>Sufficient financial proof</li>
+                    </ul>
+                </div>
+            </div>
+
         </div>
-        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
-          <h4 class="font-bold text-slate-800 mb-2 flex items-center gap-2">
-            <i class="fa-solid fa-suitcase-rolling text-cyan-600"></i> Double Entry Visa
-          </h4>
-          <p class="text-xs text-slate-600 leading-relaxed editable" id="indiaDouble">
-            জরুরি বা অল্প সময়ের ট্যুরের জন্য ডাবল এন্ট্রি ভিসা সুবিধা দ্রুত সময়ে সম্পন্ন করার পরামর্শ।
-          </p>
+    </section>
+
+    <!-- Air Ticketing & Partners Section -->
+    <section class="section-padding" id="airtickets">
+        <div class="section-title">
+            <h2>Air Ticketing Services</h2>
+            <p style="text-align: center; color: #666; margin-top: 10px;">We issue tickets for all major global airlines at competitive rates.</p>
         </div>
-        <div class="bg-emerald-50 p-4 rounded-xl border border-emerald-200">
-          <h4 class="font-bold text-emerald-800 mb-2 flex items-center gap-2">
-            <i class="fa-solid fa-hospital-user text-emerald-600"></i> Free Medical Support
-          </h4>
-          <p class="text-xs text-emerald-700 leading-relaxed editable" id="indiaMed">
-            ভারতে চিকিৎসার জন্য হাসপাতাল সিলেক্ট করা, ডাক্তার অ্যাপয়েন্টমেন্ট নেওয়া এবং ইনভিটেশন লেটার সাপোর্ট সম্পূর্ণ ফ্রি!
-          </p>
+        
+        <div class="airlines-grid">
+            <div class="airline-box"><i class="fas fa-plane"></i> Biman Bangladesh</div>
+            <div class="airline-box"><i class="fas fa-plane"></i> US-Bangla Airlines</div>
+            <div class="airline-box"><i class="fas fa-plane"></i> Air Astra</div>
+            <div class="airline-box"><i class="fas fa-plane"></i> Emirates</div>
+            <div class="airline-box"><i class="fas fa-plane"></i> Qatar Airways</div>
+            <div class="airline-box"><i class="fas fa-plane"></i> Singapore Airlines</div>
+            <div class="airline-box"><i class="fas fa-plane"></i> AirAsia</div>
+            <div class="airline-box"><i class="fas fa-plane"></i> IndiGo</div>
+            <div class="airline-box"><i class="fas fa-plane"></i> Thai Airways</div>
+            <div class="airline-box"><i class="fas fa-plane"></i> Malaysia Airlines</div>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Tourist Visas -->
-  <section class="max-w-7xl mx-auto px-4 py-8">
-    <h3 class="text-2xl font-bold text-slate-900 mb-6 text-center">জনপ্রিয় ট্যুরিস্ট ভিসা সমূহ (Tourist Visas)</h3>
-    
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-      
-      <!-- Malaysia -->
-      <div class="bg-white p-5 rounded-xl shadow-md border border-slate-200 hover:shadow-lg transition">
-        <div class="w-12 h-12 bg-amber-100 text-amber-700 rounded-lg flex items-center justify-center text-2xl mb-4">
-          <i class="fa-solid fa-plane-departure"></i>
+    <!-- Footer Section -->
+    <footer id="contact">
+        <div class="footer-grid">
+            <div class="footer-about">
+                <h3>PRIME GLOBAL</h3>
+                <p>Your trusted agency for visa processing, international travel solutions, India medical tourism management, and worldwide air ticketing.</p>
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/share/1GQcBEu3CV/?mibextid=wwXIfr" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/prime_global12?xtok=MWF5MnE5ZWhjdTdlbA%3D%3D&utm_source=qr" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/8801620458326" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-contact">
+                <h3>Contact Info</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Akter Shopping City, (Lift-05) Modina Market, Sylhet</p>
+                <p><i class="fas fa-phone-alt"></i> +8801620-458326</p>
+                <p><i class="fab fa-whatsapp"></i> +8801620-458326 (WhatsApp Support)</p>
+            </div>
+
+            <div class="footer-links">
+                <h3>Our Specializations</h3>
+                <p>• India Medical & Doctor Appointment</p>
+                <p>• Double & Multiple Entry Indian Visas</p>
+                <p>• Malaysia, Thailand, China Tourist Visas</p>
+                <p>• Domestic & International Air Ticketing</p>
+            </div>
         </div>
-        <h4 class="font-bold text-lg text-slate-800">মালয়েশিয়া (Malaysia)</h4>
-        <p class="text-xs text-slate-500 mb-3">eVISA & Tourist Package</p>
-        <p class="text-xs text-slate-600 mb-4 editable" id="malaysiaDesc">
-          ১ থেকে ৩ কার্যদিবসের মধ্যে অনলাইন ই-ভিসা এবং প্রসেসিং ফাইল তৈরি।
-        </p>
-        <a href="https://wa.me/8801620458326?text=Malaysia%20Visa%20Inquiry" target="_blank" class="block text-center text-xs bg-slate-900 hover:bg-slate-800 text-white font-semibold py-2 rounded-lg">ইনকোয়ারি করুন</a>
-      </div>
-
-      <!-- Thailand -->
-      <div class="bg-white p-5 rounded-xl shadow-md border border-slate-200 hover:shadow-lg transition">
-        <div class="w-12 h-12 bg-blue-100 text-blue-700 rounded-lg flex items-center justify-center text-2xl mb-4">
-          <i class="fa-solid fa-umbrella-beach"></i>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 Prime Global - Visa & Air Ticketing Services. All Rights Reserved. | Slogan: Your Trusted Partner</p>
         </div>
-        <h4 class="font-bold text-lg text-slate-800">থাইল্যান্ড (Thailand)</h4>
-        <p class="text-xs text-slate-500 mb-3">Tourist Sticker Visa</p>
-        <p class="text-xs text-slate-600 mb-4 editable" id="thaiDesc">
-          ব্যাংক স্টেটমেন্ট ও ডকুমেন্টস চেকিং সহ ১০০% নিখুঁত ফাইল সাবমিশন।
-        </p>
-        <a href="https://wa.me/8801620458326?text=Thailand%20Visa%20Inquiry" target="_blank" class="block text-center text-xs bg-slate-900 hover:bg-slate-800 text-white font-semibold py-2 rounded-lg">ইনকোয়ারি করুন</a>
-      </div>
+    </footer>
 
-      <!-- China -->
-      <div class="bg-white p-5 rounded-xl shadow-md border border-slate-200 hover:shadow-lg transition">
-        <div class="w-12 h-12 bg-red-100 text-red-700 rounded-lg flex items-center justify-center text-2xl mb-4">
-          <i class="fa-solid fa-landmark"></i>
-        </div>
-        <h4 class="font-bold text-lg text-slate-800">চীন (China)</h4>
-        <p class="text-xs text-slate-500 mb-3">Business & Tourist Visa</p>
-        <p class="text-xs text-slate-600 mb-4 editable" id="chinaDesc">
-          ট্যুরিস্ট এবং বিজনেস ভিসার ক্ষেত্রে প্রফেশনাল পেপারওয়ার্ক সাপোর্ট।
-        </p>
-        <a href="https://wa.me/8801620458326?text=China%20Visa%20Inquiry" target="_blank" class="block text-center text-xs bg-slate-900 hover:bg-slate-800 text-white font-semibold py-2 rounded-lg">ইনকোয়ারি করুন</a>
-      </div>
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/8801620458326" class="whatsapp-float" target="_blank" title="Chat with us on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
-      <!-- Maldives -->
-      <div class="bg-white p-5 rounded-xl shadow-md border border-slate-200 hover:shadow-lg transition">
-        <div class="w-12 h-12 bg-emerald-100 text-emerald-700 rounded-lg flex items-center justify-center text-2xl mb-4">
-          <i class="fa-solid fa-water"></i>
-        </div>
-        <h4 class="font-bold text-lg text-slate-800">মালদ্বীপ (Maldives)</h4>
-        <p class="text-xs text-slate-500 mb-3">On-Arrival & Hotel Booking</p>
-        <p class="text-xs text-slate-600 mb-4 editable" id="maldivesDesc">
-          হোটেল বুকিং, রিটার্ন টিকেট এবং অন-অ্যারাইভাল ফর্ম প্রসেসিং।
-        </p>
-        <a href="https://wa.me/8801620458326?text=Maldives%20Inquiry" target="_blank" class="block text-center text-xs bg-slate-900 hover:bg-slate-800 text-white font-semibold py-2 rounded-lg">ইনকোয়ারি করুন</a>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Air Ticketing & Document Legalization -->
-  <section class="max-w-7xl mx-auto px-4 py-8">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      
-      <!-- Air Tickets -->
-      <div class="bg-white p-6 rounded-2xl shadow-md border border-slate-200">
-        <div class="flex items-center gap-3 mb-4">
-          <i class="fa-solid fa-ticket text-cyan-600 text-2xl"></i>
-          <div>
-            <h4 class="font-bold text-xl text-slate-900">এয়ার টিকিট সার্ভিস (Air Ticketing)</h4>
-            <p class="text-xs text-slate-500">Domestic & International Flights</p>
-          </div>
-        </div>
-        <p class="text-sm text-slate-600 mb-4 editable" id="ticketDesc">
-          বিশ্বের যেকোনো গন্তব্যের এয়ারলাইন টিকেট সাশ্রয়ী মূল্যে বুকিং করুন। সিট সিলেকশন ও ডেট চেঞ্জের সুবিধা।
-        </p>
-        <a href="https://wa.me/8801620458326?text=Air%20Ticket%20Booking" target="_blank" class="inline-block bg-cyan-700 text-white font-semibold text-xs px-4 py-2 rounded-lg">টিকেট ফেয়ার জানুন</a>
-      </div>
-
-      <!-- Document Legalization -->
-      <div class="bg-white p-6 rounded-2xl shadow-md border border-slate-200">
-        <div class="flex items-center gap-3 mb-4">
-          <i class="fa-solid fa-file-signature text-cyan-600 text-2xl"></i>
-          <div>
-            <h4 class="font-bold text-xl text-slate-900">ডকুমেন্টস অ্যাপোস্টাইল ও লিগ্যালাইজেশন</h4>
-            <p class="text-xs text-slate-500">Document Apostille & Legalization</p>
-          </div>
-        </div>
-        <p class="text-sm text-slate-600 mb-4 editable" id="apostilleDesc">
-          পররাষ্ট্র মন্ত্রণালয় (MOFA), শিক্ষা মন্ত্রণালয় ও আইন মন্ত্রণালয় থেকে সনদ ও ডকুমেন্টস সত্যায়ন সার্ভিস।
-        </p>
-        <a href="https://wa.me/8801620458326?text=Document%20Apostille" target="_blank" class="inline-block bg-slate-800 text-white font-semibold text-xs px-4 py-2 rounded-lg">ডকুমেন্ট জমা দিন</a>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Floating WhatsApp Button -->
-  <a href="https://wa.me/8801620458326" target="_blank" class="fixed bottom-6 right-6 bg-emerald-500 hover:bg-emerald-600 text-white p-4 rounded-full shadow-2xl z-50 flex items-center justify-center text-3xl transition-transform hover:scale-110">
-    <i class="fa-brands fa-whatsapp"></i>
-  </a>
-
-  <!-- Footer -->
-  <footer class="bg-slate-900 text-slate-400 py-8 px-4 border-t border-slate-800 text-sm">
-    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
-      <div>
-        <p class="font-bold text-white text-base">PRIME GLOBAL</p>
-        <p class="text-xs text-slate-400 mt-1 editable" id="footerAddr">Akter Shopping City (Lift-05), Modina Market, Sylhet.</p>
-      </div>
-      <div class="flex items-center gap-4">
-        <a href="https://www.facebook.com/profile.php?id=61594384176682" target="_blank" class="hover:text-white"><i class="fa-brands fa-facebook text-xl"></i></a>
-        <a href="https://www.instagram.com/prime_global12?psln=MTF2OXRpcTIwcGIxMA==" target="_blank" class="hover:text-pink-600"><i class="fa-brands fa-instagram text-xl"></i></a>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    let isEditMode = false;
-
-    function toggleEditMode() {
-      isEditMode = !isEditMode;
-      const editables = document.querySelectorAll('.editable');
-      const editBtnText = document.getElementById('editBtnText');
-
-      editables.forEach(el => {
-        el.contentEditable = isEditMode ? "true" : "false";
-      });
-
-      if (isEditMode) {
-        editBtnText.innerText = "এডিট বন্ধ করুন";
-        alert("কাস্টমাইজড এডিট মোড চালু হয়েছে! এখন লেখার ওপর ক্লিক করে এডিট করতে পারবেন। সেভ করতে 'সেভ করুন' এ চাপ দিন।");
-      } else {
-        editBtnText.innerText = "কাস্টমাইজড এডিট মোড";
-      }
-    }
-
-    function saveEdits() {
-      const editables = document.querySelectorAll('.editable');
-      editables.forEach(el => {
-        if (el.id) {
-          localStorage.setItem('primeglobal_' + el.id, el.innerHTML);
-        }
-      });
-      alert("আপনার পরিবর্তনগুলো সফলভাবে ব্রাউজারে সেভ হয়েছে!");
-    }
-
-    // Load Saved Content
-    window.addEventListener('DOMContentLoaded', () => {
-      const editables = document.querySelectorAll('.editable');
-      editables.forEach(el => {
-        if (el.id) {
-          const savedData = localStorage.getItem('primeglobal_' + el.id);
-          if (savedData) {
-            el.innerHTML = savedData;
-          }
-        }
-      });
-    });
-  </script>
 </body>
 </html>
