@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Prime Global - Premier Travel & Visa Services</title>
+  <title>Prime Global - Visa & Air Ticketing Services</title>
   
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -18,19 +18,17 @@
     body { font-family: 'Plus Jakarta Sans', sans-serif; }
     .brand-font { font-family: 'Cinzel', serif; }
     
-    /* Smooth Pulse Animation for Background */
     .hero-gradient {
-      background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(241,245,249,0.95) 100%), 
+      background: linear-gradient(135deg, rgba(255,255,255,0.96) 0%, rgba(241,245,249,0.96) 100%), 
                   url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=1600&auto=format&fit=crop');
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
     }
 
-    /* Floating Animation for plane icon */
     @keyframes float {
       0% { transform: translateY(0px) rotate(0deg); }
-      50% { transform: translateY(-10px) rotate(2deg); }
+      50% { transform: translateY(-8px) rotate(2deg); }
       100% { transform: translateY(0px) rotate(0deg); }
     }
     .floating-plane { animation: float 4s ease-in-out infinite; }
@@ -52,14 +50,14 @@
         <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
         <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
       </span>
-      <span class="font-medium text-slate-300">Prime Global Control Panel</span>
+      <span class="font-medium text-slate-300">Prime Global Admin Control Panel</span>
     </div>
     <div class="flex space-x-2">
       <button onclick="toggleEditMode()" id="editBtn" class="bg-slate-700 hover:bg-slate-600 text-white px-3 py-1 rounded transition flex items-center gap-1 font-semibold">
         <i class="fa-solid fa-pen-to-square text-xs"></i> <span id="editBtnText">Live Edit Mode</span>
       </button>
       <button onclick="saveEdits()" class="bg-emerald-600 hover:bg-emerald-500 text-white px-3 py-1 rounded transition flex items-center gap-1 font-semibold">
-        <i class="fa-solid fa-floppy-disk text-xs"></i> Save
+        <i class="fa-solid fa-floppy-disk text-xs"></i> Save Changes
       </button>
     </div>
   </div>
@@ -82,7 +80,7 @@
   <header class="bg-white/95 backdrop-blur-md border-b border-slate-200 sticky top-8 z-40 shadow-sm">
     <div class="max-w-7xl mx-auto px-4 py-3.5 flex justify-between items-center">
       
-      <!-- Logo -->
+      <!-- Brand Logo -->
       <a href="#" class="flex items-center gap-3 group">
         <div class="w-12 h-12 md:w-14 md:h-14 bg-gradient-to-br from-slate-900 to-slate-950 rounded-xl p-2.5 shadow-md flex items-center justify-center relative">
           <svg viewBox="0 0 200 200" class="w-full h-full text-white">
@@ -102,7 +100,7 @@
         <a href="#home" class="hover:text-cyan-700 transition">Home</a>
         <a href="#medical-special" class="hover:text-cyan-700 transition">India Medical Visa</a>
         <a href="#destinations" class="hover:text-cyan-700 transition">Visa Destinations</a>
-        <a href="#services" class="hover:text-cyan-700 transition">Services</a>
+        <a href="#air-ticketing" class="hover:text-cyan-700 transition">Air Ticketing</a>
         <a href="#contact" class="hover:text-cyan-700 transition">Contact Us</a>
       </nav>
 
@@ -123,38 +121,38 @@
       <div class="lg:col-span-7 space-y-6">
         <div class="inline-flex items-center gap-2 px-3 py-1 bg-white border border-slate-200 rounded-full text-xs font-bold text-cyan-800 shadow-sm">
           <i class="fa-solid fa-plane-up text-cyan-600 floating-plane"></i>
-          <span>Global Visa & Medical Tourism Specialist</span>
+          <span>Trusted Visa & Medical Tourism Consultancy</span>
         </div>
 
         <h2 class="text-3xl sm:text-5xl font-extrabold text-slate-900 leading-tight tracking-tight editable" id="heroTitle">
-          Your Trusted Partner for India Medical, Asia Visas & Air Tickets
+          Expert India Medical Visa, Asia Visas & Air Ticketing Services
         </h2>
 
         <p class="text-slate-600 text-base sm:text-lg leading-relaxed editable" id="heroDesc">
-          We specialize in **India Double Entry, Multiple & Medical Visas with FREE Doctor Consultation & Hospital Booking**. Also offering tourist & business visas for **Malaysia, Thailand, China, Maldives** and lowest airfare ticketing!
+          Specialized in **India Double Entry, Multiple & Medical Visas with FREE Doctor Consultation & Hospital Appointments**. We also process Tourist & Business Visas for **Malaysia, Thailand, China, Maldives** and lowest fare **Air Tickets**.
         </p>
 
         <!-- Dynamic Service Pills -->
         <div class="flex flex-wrap gap-2 pt-2">
-          <span class="bg-white border border-slate-200 text-slate-800 px-3 py-1.5 rounded-lg text-xs font-bold shadow-sm"><i class="fa-solid fa-notes-medical text-rose-500 mr-1.5"></i> Doctor Appointments</span>
-          <span class="bg-white border border-slate-200 text-slate-800 px-3 py-1.5 rounded-lg text-xs font-bold shadow-sm"><i class="fa-solid fa-hospital text-cyan-600 mr-1.5"></i> Hospital Bookings</span>
-          <span class="bg-white border border-slate-200 text-slate-800 px-3 py-1.5 rounded-lg text-xs font-bold shadow-sm"><i class="fa-solid fa-ticket text-amber-500 mr-1.5"></i> Worldwide Air Tickets</span>
+          <span class="bg-white border border-slate-200 text-slate-800 px-3 py-1.5 rounded-lg text-xs font-bold shadow-sm"><i class="fa-solid fa-user-doctor text-rose-500 mr-1.5"></i> Free Doctor Consultation</span>
+          <span class="bg-white border border-slate-200 text-slate-800 px-3 py-1.5 rounded-lg text-xs font-bold shadow-sm"><i class="fa-solid fa-hospital text-cyan-600 mr-1.5"></i> Hospital & Doctor Appointment</span>
+          <span class="bg-white border border-slate-200 text-slate-800 px-3 py-1.5 rounded-lg text-xs font-bold shadow-sm"><i class="fa-solid fa-plane text-emerald-600 mr-1.5"></i> Worldwide Air Ticket</span>
         </div>
       </div>
 
-      <!-- Quick Consultation Form Box -->
+      <!-- Quick Inquiry Form Box -->
       <div class="lg:col-span-5">
         <div class="bg-white/95 border border-slate-200 rounded-3xl p-6 md:p-8 shadow-2xl backdrop-blur-md">
           <div class="flex border-b border-slate-200 mb-6">
             <button class="pb-3 px-2 font-bold text-sm text-slate-900 border-b-2 border-cyan-700 flex items-center gap-2">
-              <i class="fa-solid fa-paper-plane text-cyan-700"></i> Instant Visa Inquiry
+              <i class="fa-solid fa-paper-plane text-cyan-700"></i> Quick Visa & Flight Inquiry
             </button>
           </div>
 
           <form onsubmit="handleQuickQuery(event)" class="space-y-4">
             <div>
-              <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Full Name *</label>
-              <input type="text" id="custName" required placeholder="e.g. Rahim Uddin" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-slate-900 text-sm">
+              <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Your Name *</label>
+              <input type="text" id="custName" required placeholder="e.g. Md. Rahim" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-slate-900 text-sm">
             </div>
 
             <div>
@@ -163,20 +161,20 @@
             </div>
 
             <div>
-              <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Select Service</label>
+              <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Select Required Service</label>
               <select id="custService" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-slate-900 text-sm font-medium">
                 <option>India Medical Visa + Free Consultation</option>
-                <option>India Tourist Visa (Double/Multiple Entry)</option>
+                <option>India Tourist Visa (Double / Multiple Entry)</option>
                 <option>Malaysia Tourist / Business Visa</option>
                 <option>Thailand Tourist Visa</option>
                 <option>China Business / Tourist Visa</option>
-                <option>Maldives Visa & Package</option>
-                <option>Air Ticket Booking</option>
+                <option>Maldives Visa & Hotel Package</option>
+                <option>Air Ticket Booking (Domestic & International)</option>
               </select>
             </div>
 
             <button type="submit" class="w-full bg-slate-900 hover:bg-slate-800 text-white font-bold py-3.5 rounded-xl shadow-lg transition duration-200 text-sm mt-2 flex items-center justify-center gap-2">
-              <i class="fa-brands fa-whatsapp text-lg text-emerald-400"></i> Send Request via WhatsApp
+              <i class="fa-brands fa-whatsapp text-lg text-emerald-400"></i> Send Inquiry via WhatsApp
             </button>
           </form>
         </div>
@@ -193,9 +191,9 @@
         <span class="bg-rose-500/20 text-rose-300 border border-rose-500/30 text-xs px-3 py-1 rounded-full font-bold uppercase tracking-wider">
           Special Medical Tourism Hub
         </span>
-        <h2 class="text-3xl md:text-4xl font-extrabold mt-3">India Medical Visa & Patient Care Services</h2>
+        <h2 class="text-3xl md:text-4xl font-extrabold mt-3">India Medical Visa & Complete Patient Support</h2>
         <p class="text-slate-400 text-sm mt-3 leading-relaxed">
-          We treat every patient like family! Get hassle-free medical visa processing along with complete hospital assistance in India.
+          Complete medical travel support for patients from Bangladesh going to India. From doctor recommendation to visa file preparation and hospital invitation letters.
         </p>
       </div>
 
@@ -206,7 +204,7 @@
             <i class="fa-solid fa-user-doctor"></i>
           </div>
           <h3 class="font-bold text-lg text-white mb-2">Free Doctor Consultation</h3>
-          <p class="text-xs text-slate-400 leading-relaxed">Free initial guide and doctor matching based on your medical reports.</p>
+          <p class="text-xs text-slate-400 leading-relaxed">Free medical file assessment and top doctor matching based on patient condition.</p>
         </div>
 
         <div class="bg-slate-800/60 border border-slate-700/60 p-6 rounded-2xl hover:border-cyan-500/50 transition">
@@ -214,15 +212,15 @@
             <i class="fa-solid fa-hospital"></i>
           </div>
           <h3 class="font-bold text-lg text-white mb-2">Hospital Booking</h3>
-          <p class="text-xs text-slate-400 leading-relaxed">Top hospitals in Chennai, Kolkata, Delhi, Bangalore & Hyderabad.</p>
+          <p class="text-xs text-slate-400 leading-relaxed">Direct connection with top hospitals in Chennai, Kolkata, Delhi, Bangalore & Hyderabad.</p>
         </div>
 
         <div class="bg-slate-800/60 border border-slate-700/60 p-6 rounded-2xl hover:border-emerald-500/50 transition">
           <div class="w-12 h-12 bg-emerald-500/10 text-emerald-400 rounded-xl flex items-center justify-center text-2xl mb-4">
             <i class="fa-solid fa-calendar-check"></i>
           </div>
-          <h3 class="font-bold text-lg text-white mb-2">Fast Doctor Appointment</h3>
-          <p class="text-xs text-slate-400 leading-relaxed">Guaranteed doctor appointments with invitation letters for visa.</p>
+          <h3 class="font-bold text-lg text-white mb-2">Doctor Appointment</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">Fast-track specialist doctor appointments along with official hospital invitation letters for visa.</p>
         </div>
 
         <div class="bg-slate-800/60 border border-slate-700/60 p-6 rounded-2xl hover:border-amber-500/50 transition">
@@ -230,7 +228,7 @@
             <i class="fa-solid fa-passport"></i>
           </div>
           <h3 class="font-bold text-lg text-white mb-2">Medical Visa File</h3>
-          <p class="text-xs text-slate-400 leading-relaxed">Complete file processing for Double, Triple or Attendant Medical Visas.</p>
+          <p class="text-xs text-slate-400 leading-relaxed">Proper file processing for Double Entry, Multiple Entry, or Medical Attendant Visas.</p>
         </div>
 
       </div>
@@ -243,8 +241,8 @@
     <div class="max-w-7xl mx-auto px-4">
       
       <div class="text-center max-w-2xl mx-auto mb-16">
-        <p class="text-xs font-bold text-cyan-700 uppercase tracking-widest mb-2">Global Visa Coverage</p>
-        <h2 class="text-3xl font-extrabold text-slate-900">Popular Countries & Visa Requirements</h2>
+        <p class="text-xs font-bold text-cyan-700 uppercase tracking-widest mb-2">Visa Destinations</p>
+        <h2 class="text-3xl font-extrabold text-slate-900">Countries We Process Visas For</h2>
       </div>
 
       <div class="grid md:grid-cols-3 gap-8">
@@ -258,8 +256,8 @@
           <div class="p-6">
             <h3 class="text-xl font-bold text-slate-900 mb-2">India (Double / Multiple / Medical)</h3>
             <ul class="text-xs text-slate-600 space-y-2 mb-6">
-              <li><i class="fa-solid fa-circle-check text-emerald-600 mr-2"></i>Double Entry & Multiple Entry Tourist Visa</li>
-              <li><i class="fa-solid fa-circle-check text-emerald-600 mr-2"></i>Medical Visa with Doctor Invitation Letter</li>
+              <li><i class="fa-solid fa-circle-check text-emerald-600 mr-2"></i>Double & Multiple Entry Tourist Visa</li>
+              <li><i class="fa-solid fa-circle-check text-emerald-600 mr-2"></i>Medical Visa with Hospital Invitation</li>
               <li><i class="fa-solid fa-circle-check text-emerald-600 mr-2"></i>Passport + Bank Statement + NID/Utility Bill</li>
             </ul>
             <a href="https://wa.me/8801620458326?text=I%20need%20info%20about%20India%20Visa" target="_blank" class="block text-center bg-slate-900 hover:bg-slate-800 text-white font-bold py-2.5 rounded-xl text-xs transition">Apply For India Visa</a>
@@ -275,7 +273,7 @@
           <div class="p-6">
             <h3 class="text-xl font-bold text-slate-900 mb-2">Malaysia (Tourist & Business)</h3>
             <ul class="text-xs text-slate-600 space-y-2 mb-6">
-              <li><i class="fa-solid fa-circle-check text-emerald-600 mr-2"></i>Tourist E-Visa & Business Single/Multiple</li>
+              <li><i class="fa-solid fa-circle-check text-emerald-600 mr-2"></i>Tourist E-Visa & Business Visa</li>
               <li><i class="fa-solid fa-circle-check text-emerald-600 mr-2"></i>Fast 3-5 Working Days Approval</li>
               <li><i class="fa-solid fa-circle-check text-emerald-600 mr-2"></i>Passport Copy + White Background Photo</li>
             </ul>
@@ -292,9 +290,9 @@
           <div class="p-6">
             <h3 class="text-xl font-bold text-slate-900 mb-2">Thailand (Tourist Sticker)</h3>
             <ul class="text-xs text-slate-600 space-y-2 mb-6">
-              <li><i class="fa-solid fa-circle-check text-emerald-600 mr-2"></i>6 Month Single Entry Tourist Visa</li>
+              <li><i class="fa-solid fa-circle-check text-emerald-600 mr-2"></i>6 Month Single Entry Sticker Visa</li>
               <li><i class="fa-solid fa-circle-check text-emerald-600 mr-2"></i>Bank Solvency & 6 Month Statement</li>
-              <li><i class="fa-solid fa-circle-check text-emerald-600 mr-2"></i>Air Ticket & Hotel Voucher Included</li>
+              <li><i class="fa-solid fa-circle-check text-emerald-600 mr-2"></i>Air Ticket & Hotel Booking Vouchers</li>
             </ul>
             <a href="https://wa.me/8801620458326?text=I%20need%20info%20about%20Thailand%20Visa" target="_blank" class="block text-center bg-slate-900 hover:bg-slate-800 text-white font-bold py-2.5 rounded-xl text-xs transition">Apply For Thailand Visa</a>
           </div>
@@ -321,31 +319,31 @@
         <div class="bg-slate-50 border border-slate-200 rounded-3xl overflow-hidden hover:shadow-xl transition group">
           <div class="h-48 overflow-hidden relative">
             <img src="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?q=80&w=800&auto=format&fit=crop" alt="Maldives Beach" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-            <span class="absolute top-3 right-3 bg-slate-900/80 text-white text-[10px] font-bold px-3 py-1 rounded-full backdrop-blur-sm">Maldives Package</span>
+            <span class="absolute top-3 right-3 bg-slate-900/80 text-white text-[10px] font-bold px-3 py-1 rounded-full backdrop-blur-sm">Maldives Visa</span>
           </div>
           <div class="p-6">
             <h3 class="text-xl font-bold text-slate-900 mb-2">Maldives (On Arrival & Package)</h3>
             <ul class="text-xs text-slate-600 space-y-2 mb-6">
-              <li><i class="fa-solid fa-circle-check text-emerald-600 mr-2"></i>On-Arrival Visa Assitance & IMUGA Form</li>
-              <li><i class="fa-solid fa-circle-check text-emerald-600 mr-2"></i>Resort & Hotel Booking Vouchers</li>
-              <li><i class="fa-solid fa-circle-check text-emerald-600 mr-2"></i>Honeymoon & Family Packages</li>
+              <li><i class="fa-solid fa-circle-check text-emerald-600 mr-2"></i>On-Arrival Assistance & IMUGA Form</li>
+              <li><i class="fa-solid fa-circle-check text-emerald-600 mr-2"></i>Confirmed Resort & Hotel Bookings</li>
+              <li><i class="fa-solid fa-circle-check text-emerald-600 mr-2"></i>Honeymoon & Family Customized Packages</li>
             </ul>
             <a href="https://wa.me/8801620458326?text=I%20need%20info%20about%20Maldives%20Package" target="_blank" class="block text-center bg-slate-900 hover:bg-slate-800 text-white font-bold py-2.5 rounded-xl text-xs transition">Apply For Maldives</a>
           </div>
         </div>
 
-        <!-- Air Ticketing Card -->
-        <div class="bg-slate-900 text-white rounded-3xl overflow-hidden p-8 flex flex-col justify-between shadow-xl">
+        <!-- Country 6: Air Ticketing Hub -->
+        <div id="air-ticketing" class="bg-slate-900 text-white rounded-3xl overflow-hidden p-8 flex flex-col justify-between shadow-xl">
           <div>
             <div class="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center text-2xl text-cyan-400 mb-6">
               <i class="fa-solid fa-plane"></i>
             </div>
             <h3 class="text-2xl font-bold mb-3">Air Ticketing Service</h3>
             <p class="text-slate-300 text-xs leading-relaxed mb-6">
-              Lowest fares for Biman Bangladesh, US-Bangla, Air Asia, Indigo, Emirates, Singapore Airlines & more!
+              Lowest fares for Biman Bangladesh, US-Bangla, Air Asia, Indigo, Emirates, Singapore Airlines & all worldwide flights.
             </p>
           </div>
-          <a href="https://wa.me/8801620458326?text=I%20need%20Air%20Ticket" target="_blank" class="block text-center bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3 rounded-xl text-xs transition">Book Air Ticket Now</a>
+          <a href="https://wa.me/8801620458326?text=I%20need%20Air%20Ticket%20Booking" target="_blank" class="block text-center bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3 rounded-xl text-xs transition">Book Flight Ticket</a>
         </div>
 
       </div>
@@ -358,10 +356,10 @@
     <div class="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center">
       
       <div class="space-y-6">
-        <p class="text-xs font-bold text-cyan-400 uppercase tracking-widest">Connect With Us</p>
-        <h2 class="text-3xl font-extrabold">Have Questions? Reach Out To Prime Global</h2>
+        <p class="text-xs font-bold text-cyan-400 uppercase tracking-widest">Contact Prime Global</p>
+        <h2 class="text-3xl font-extrabold">Get In Touch With Our Visa Experts</h2>
         <p class="text-slate-400 text-sm leading-relaxed">
-          Contact our specialized visa consultants directly for fast, reliable, and authentic assistance.
+          Reach out to us via email or phone for instant assistance regarding visa processing, medical consultations, or flight tickets.
         </p>
 
         <div class="space-y-4 pt-4">
@@ -389,7 +387,7 @@
 
       <!-- Form Box -->
       <div class="bg-white rounded-3xl p-6 md:p-8 text-slate-800 shadow-2xl">
-        <h3 class="text-xl font-bold text-slate-900 mb-4">Send Direct Email Query</h3>
+        <h3 class="text-xl font-bold text-slate-900 mb-4">Send Us a Message</h3>
         <form action="https://formspree.io/f/primeglobalbd99@gmail.com" method="POST" class="space-y-4">
           <div>
             <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Your Name</label>
@@ -413,7 +411,7 @@
           </div>
 
           <button type="submit" class="w-full bg-slate-900 hover:bg-slate-800 text-white font-bold py-3.5 rounded-xl shadow-md transition text-sm">
-            Send Email Message
+            Submit Message
           </button>
         </form>
       </div>
