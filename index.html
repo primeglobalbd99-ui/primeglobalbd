@@ -1,282 +1,397 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prime Global - Visa & Air Ticketing Services | Your Trusted Partner</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        :root {
-            --primary: #0f172a;
-            --secondary: #1e293b;
-            --accent: #d97706;
-            --bg-light: #ffffff;
-            --bg-subtle: #f8fafc;
-            --text-main: #334155;
-            --text-dark: #0f172a;
-            --border-color: #e2e8f0;
-            --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
-            --shadow-md: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prime Global - Visa & Air Ticketing Services</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    body { 
+      font-family: 'Plus Jakarta Sans', sans-serif; 
+    }
+    .brand-font { 
+      font-family: 'Cinzel', serif; 
+    }
+    .glass-card { 
+      background: rgba(255, 255, 255, 0.95); 
+      backdrop-filter: blur(12px); 
+      border: 1px solid rgba(226, 232, 240, 0.8); 
+    }
+    [contenteditable="true"] { 
+      outline: 2px dashed #0284c7 !important; 
+      background-color: rgba(2, 132, 199, 0.1); 
+      padding: 2px 6px; 
+      border-radius: 4px; 
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-slate-800 selection:text-white">
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            scroll-behavior: smooth;
-        }
+  <!-- Admin Bar -->
+  <div class="bg-slate-900 text-white py-2 px-4 text-xs flex justify-between items-center sticky top-0 z-50 shadow-md">
+    <div class="flex items-center space-x-2">
+      <span class="relative flex h-2.5 w-2.5">
+        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+        <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+      </span>
+      <span class="font-medium text-slate-300">Prime Global Admin Control Panel</span>
+    </div>
+    <div class="flex space-x-2">
+      <button onclick="toggleEditMode()" id="editBtn" class="bg-slate-700 hover:bg-slate-600 text-white px-3 py-1 rounded transition flex items-center gap-1 font-semibold">
+        <i class="fa-solid fa-pen-to-square text-xs"></i> <span id="editBtnText">Live Edit Mode</span>
+      </button>
+      <button onclick="saveEdits()" class="bg-emerald-600 hover:bg-emerald-500 text-white px-3 py-1 rounded transition flex items-center gap-1 font-semibold">
+        <i class="fa-solid fa-floppy-disk text-xs"></i> Save
+      </button>
+    </div>
+  </div>
 
-        body {
-            background-color: var(--bg-light);
-            color: var(--text-main);
-            line-height: 1.6;
-        }
+  <!-- Top Info Bar -->
+  <div class="bg-slate-100 border-b border-slate-200 py-2 text-xs text-slate-600 hidden md:block">
+    <div class="max-w-7xl mx-auto px-4 flex justify-between items-center">
+      <div class="flex items-center gap-6">
+        <span><i class="fa-solid fa-envelope text-slate-400 mr-1.5"></i> primeglobalbd99@gmail.com</span>
+        <span><i class="fa-solid fa-phone text-slate-400 mr-1.5"></i> +880 1620-458326</span>
+        <span><i class="fa-solid fa-clock text-slate-400 mr-1.5"></i> Sat - Thu: 10:00 AM - 8:00 PM</span>
+      </div>
+      <div class="flex items-center gap-4 text-slate-500">
+        <a href="https://wa.me/8801620458326" target="_blank" class="hover:text-emerald-600"><i class="fa-brands fa-whatsapp text-sm"></i></a>
+        <a href="#" class="hover:text-blue-600"><i class="fa-brands fa-facebook-f text-sm"></i></a>
+      </div>
+    </div>
+  </div>
 
-        /* Top Bar */
-        .top-bar {
-            background-color: var(--primary);
-            color: #94a3b8;
-            padding: 10px 8%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 13px;
-        }
+  <!-- Main Header -->
+  <header class="bg-white border-b border-slate-200 sticky top-8 z-40 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      
+      <!-- Brand Logo (Exact matching from image) -->
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-12 h-12 md:w-14 md:h-14 bg-gradient-to-br from-slate-800 to-slate-950 rounded-xl p-2.5 shadow-md flex items-center justify-center">
+          <svg viewBox="0 0 200 200" class="w-full h-full text-slate-100">
+            <!-- Paper Airplane Icon with Checkmark -->
+            <path d="M 30,110 L 170,30 L 110,170 L 90,120 Z" fill="none" stroke="currentColor" stroke-width="12" stroke-linejoin="round"/>
+            <path d="M 90,120 L 170,30" stroke="currentColor" stroke-width="10"/>
+            <path d="M 70,140 L 110,180 L 180,90" fill="none" stroke="#ffffff" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div>
+          <h1 class="brand-font text-xl md:text-2xl font-bold tracking-widest text-slate-900 uppercase editable" id="brandTitle">PRIME GLOBAL</h1>
+          <p class="text-[9px] md:text-[11px] text-slate-600 font-bold tracking-widest uppercase editable" id="brandSub">VISA & AIR TICKETING SERVICES</p>
+        </div>
+      </a>
 
-        .top-info span {
-            margin-right: 20px;
-            color: #cbd5e1;
-        }
+      <!-- Navigation Links -->
+      <nav class="hidden lg:flex items-center gap-8 font-semibold text-sm text-slate-700">
+        <a href="#home" class="hover:text-slate-900 transition">Home</a>
+        <a href="#services" class="hover:text-slate-900 transition">Services</a>
+        <a href="#destinations" class="hover:text-slate-900 transition">Popular Visas</a>
+        <a href="#about" class="hover:text-slate-900 transition">Why Us</a>
+        <a href="#contact" class="hover:text-slate-900 transition">Contact Us</a>
+      </nav>
 
-        .top-info i {
-            color: var(--accent);
-            margin-right: 6px;
-        }
+      <!-- CTA Button -->
+      <div class="flex items-center gap-3">
+        <a href="https://wa.me/8801620458326" target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2.5 rounded-lg text-xs md:text-sm font-bold shadow-sm transition flex items-center gap-2">
+          <i class="fa-brands fa-whatsapp text-base"></i>
+          <span>WhatsApp Us</span>
+        </a>
+      </div>
 
-        .top-social a {
-            color: #cbd5e1;
-            margin-left: 12px;
-            text-decoration: none;
-            transition: 0.3s;
-        }
+    </div>
+  </header>
 
-        .top-social a:hover {
-            color: #fff;
-        }
+  <!-- Hero Section - White & Classic Style -->
+  <section id="home" class="bg-white py-16 md:py-24 border-b border-slate-200 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 grid lg:grid-cols-12 gap-12 items-center">
+      
+      <!-- Left Hero Content -->
+      <div class="lg:col-span-7 space-y-6">
+        <div class="inline-flex items-center gap-2 px-3 py-1 bg-slate-100 border border-slate-200 rounded-full text-xs font-semibold text-slate-700">
+          <i class="fa-solid fa-shield-halved text-slate-800"></i>
+          <span>Trusted Visa & Ticketing Partner</span>
+        </div>
 
-        /* Header */
-        header {
-            background: #ffffff;
-            padding: 15px 8%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
-            border-bottom: 1px solid var(--border-color);
-        }
+        <h2 class="text-3xl sm:text-5xl font-extrabold text-slate-900 leading-tight tracking-tight editable" id="heroTitle">
+          Seamless Visa Processing & Worldwide Air Flight Booking
+        </h2>
 
-        .logo-box {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
+        <p class="text-slate-600 text-base sm:text-lg leading-relaxed editable" id="heroDesc">
+          Prime Global provides authentic, fast, and hassle-free visa processing, air ticketing, hotel reservations, and custom tour packages for destinations across the world.
+        </p>
 
-        .logo-box img {
-            height: 52px;
-            width: auto;
-            border-radius: 6px;
-        }
+        <!-- Key Feature Badges -->
+        <div class="grid grid-cols-3 gap-4 pt-4 border-t border-slate-100">
+          <div>
+            <p class="text-2xl font-extrabold text-slate-900">98%+</p>
+            <p class="text-xs text-slate-500 font-medium">Visa Success Rate</p>
+          </div>
+          <div>
+            <p class="text-2xl font-extrabold text-slate-900">50+</p>
+            <p class="text-xs text-slate-500 font-medium">Countries Covered</p>
+          </div>
+          <div>
+            <p class="text-2xl font-extrabold text-slate-900">24/7</p>
+            <p class="text-xs text-slate-500 font-medium">Expert Assistance</p>
+          </div>
+        </div>
+      </div>
 
-        .logo-text h1 {
-            font-size: 20px;
-            font-weight: 800;
-            color: var(--primary);
-            letter-spacing: 0.5px;
-        }
+      <!-- Right Side Interactive Search Box -->
+      <div class="lg:col-span-5">
+        <div class="bg-slate-50 border border-slate-200 rounded-3xl p-6 md:p-8 shadow-xl">
+          <div class="flex border-b border-slate-200 mb-6">
+            <button class="pb-3 px-4 font-bold text-sm text-slate-900 border-b-2 border-slate-900">Quick Inquiry</button>
+          </div>
 
-        .logo-text p {
-            font-size: 11px;
-            color: var(--accent);
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-        }
+          <form onsubmit="handleQuickQuery(event)" class="space-y-4">
+            <div>
+              <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Your Name *</label>
+              <input type="text" id="custName" required placeholder="John Doe" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-white focus:outline-none focus:ring-2 focus:ring-slate-800 text-sm">
+            </div>
 
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 30px;
-        }
+            <div>
+              <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Phone / WhatsApp Number *</label>
+              <input type="tel" id="custPhone" required placeholder="01700000000" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-white focus:outline-none focus:ring-2 focus:ring-slate-800 text-sm">
+            </div>
 
-        nav ul li a {
-            text-decoration: none;
-            color: var(--text-dark);
-            font-weight: 600;
-            font-size: 14px;
-            transition: 0.3s;
-        }
+            <div>
+              <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Service Required</label>
+              <select id="custService" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-white focus:outline-none focus:ring-2 focus:ring-slate-800 text-sm font-medium">
+                <option>Visa Assistance (Schengen, USA, UK, UAE)</option>
+                <option>Air Ticket Booking (Domestic & International)</option>
+                <option>Hotel Reservation & Tour Packages</option>
+                <option>Other Consultations</option>
+              </select>
+            </div>
 
-        nav ul li a:hover {
-            color: var(--accent);
-        }
+            <div>
+              <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Destination Country</label>
+              <input type="text" id="custDest" placeholder="e.g. UK, Dubai, Canada" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-white focus:outline-none focus:ring-2 focus:ring-slate-800 text-sm">
+            </div>
 
-        .btn-btn {
-            background-color: var(--primary);
-            color: #fff;
-            padding: 10px 20px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 13px;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            transition: 0.3s;
-        }
+            <button type="submit" class="w-full bg-slate-900 hover:bg-slate-800 text-white font-bold py-3 rounded-xl shadow-md transition duration-200 text-sm mt-2">
+              Send Quick Inquiry
+            </button>
+          </form>
+        </div>
+      </div>
 
-        .btn-btn:hover {
-            background-color: var(--accent);
-        }
+    </div>
+  </section>
 
-        /* Hero */
-        .hero {
-            background: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.75)), url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1600&q=80') center/cover;
-            padding: 100px 8%;
-            text-align: center;
-            color: #fff;
-        }
+  <!-- Services Section -->
+  <section id="services" class="py-20 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <p class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-2">Our Specialization</p>
+        <h2 class="text-3xl font-extrabold text-slate-900">Professional Travel Services</h2>
+      </div>
 
-        .hero h2 {
-            font-size: 42px;
-            font-weight: 800;
-            margin-bottom: 15px;
-        }
+      <div class="grid md:grid-cols-3 gap-8">
+        
+        <!-- Card 1 -->
+        <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition">
+          <div class="w-12 h-12 bg-slate-100 text-slate-900 rounded-xl flex items-center justify-center text-xl mb-6">
+            <i class="fa-solid fa-passport"></i>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-3 editable" id="srv1Title">Visa Processing</h3>
+          <p class="text-slate-600 text-sm leading-relaxed editable" id="srv1Desc">
+            Complete document assessment, appointment scheduling, and file processing for UK, USA, Canada, Schengen, and Asian countries.
+          </p>
+        </div>
 
-        .hero p {
-            font-size: 18px;
-            max-width: 700px;
-            margin: 0 auto 30px;
-            color: #e2e8f0;
-        }
+        <!-- Card 2 -->
+        <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition">
+          <div class="w-12 h-12 bg-slate-100 text-slate-900 rounded-xl flex items-center justify-center text-xl mb-6">
+            <i class="fa-solid fa-plane-departure"></i>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-3 editable" id="srv2Title">Air Ticketing</h3>
+          <p class="text-slate-600 text-sm leading-relaxed editable" id="srv2Desc">
+            Instant booking and competitive airfares for all major international and domestic airlines worldwide.
+          </p>
+        </div>
 
-        /* Spinners / Trust Badges */
-        .trust-section {
-            padding: 40px 8%;
-            background-color: #ffffff;
-            border-bottom: 1px solid var(--border-color);
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
-        }
+        <!-- Card 3 -->
+        <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition">
+          <div class="w-12 h-12 bg-slate-100 text-slate-900 rounded-xl flex items-center justify-center text-xl mb-6">
+            <i class="fa-solid fa-hotel"></i>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-3 editable" id="srv3Title">Holidays & Hotels</h3>
+          <p class="text-slate-600 text-sm leading-relaxed editable" id="srv3Desc">
+            Customized family tour itineraries, luxury or budget hotel reservations, and travel insurance assistance.
+          </p>
+        </div>
 
-        .trust-card {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            padding: 15px;
-            border: 1px solid var(--border-color);
-            border-radius: 10px;
-            background: var(--bg-subtle);
-        }
+      </div>
 
-        .spin-icon {
-            font-size: 24px;
-            color: var(--accent);
-            animation: spin 3s linear infinite;
-        }
+    </div>
+  </section>
 
-        @keyframes spin {
-            100% { transform: rotate(360deg); }
-        }
+  <!-- Popular Visa Destinations Grid -->
+  <section id="destinations" class="py-20 bg-white border-t border-slate-200">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+        <div>
+          <p class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-2">Destinations</p>
+          <h2 class="text-3xl font-extrabold text-slate-900">Popular Visa Consultancy</h2>
+        </div>
+        <a href="#contact" class="text-xs font-bold text-slate-900 uppercase tracking-wider hover:underline mt-4 md:mt-0">View All Countries →</a>
+      </div>
 
-        .trust-info h4 {
-            font-size: 14px;
-            color: var(--text-dark);
-            font-weight: 700;
-        }
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+        <div class="p-5 rounded-2xl border border-slate-200 bg-slate-50/50 hover:bg-white hover:shadow-md transition">
+          <i class="fa-solid fa-earth-europe text-2xl text-slate-700 mb-3"></i>
+          <h4 class="font-bold text-slate-900 text-base">Schengen Visa</h4>
+          <p class="text-xs text-slate-500 mt-1">27 European Countries</p>
+        </div>
+        <div class="p-5 rounded-2xl border border-slate-200 bg-slate-50/50 hover:bg-white hover:shadow-md transition">
+          <i class="fa-solid fa-building-columns text-2xl text-slate-700 mb-3"></i>
+          <h4 class="font-bold text-slate-900 text-base">UK & USA Visa</h4>
+          <p class="text-xs text-slate-500 mt-1">Tourist & Business File</p>
+        </div>
+        <div class="p-5 rounded-2xl border border-slate-200 bg-slate-50/50 hover:bg-white hover:shadow-md transition">
+          <i class="fa-solid fa-city text-2xl text-slate-700 mb-3"></i>
+          <h4 class="font-bold text-slate-900 text-base">UAE / Dubai</h4>
+          <p class="text-xs text-slate-500 mt-1">Express Visa Processing</p>
+        </div>
+        <div class="p-5 rounded-2xl border border-slate-200 bg-slate-50/50 hover:bg-white hover:shadow-md transition">
+          <i class="fa-solid fa-plane-arrival text-2xl text-slate-700 mb-3"></i>
+          <h4 class="font-bold text-slate-900 text-base">Southeast Asia</h4>
+          <p class="text-xs text-slate-500 mt-1">Thailand, Malaysia, Singapore</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        .trust-info p {
-            font-size: 12px;
-            color: #64748b;
-        }
+  <!-- Full Contact Section -->
+  <section id="contact" class="py-20 bg-slate-900 text-white">
+    <div class="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-12">
+      
+      <div class="space-y-6">
+        <p class="text-xs font-bold text-slate-400 uppercase tracking-widest">Get In Touch</p>
+        <h2 class="text-3xl font-extrabold">Ready to Plan Your Next Journey?</h2>
+        <p class="text-slate-400 text-sm leading-relaxed">
+          Contact our team directly via email or phone. We ensure prompt response and dedicated support for all your travel requirements.
+        </p>
 
-        /* Sections */
-        .section-padding {
-            padding: 70px 8%;
-        }
+        <div class="space-y-4 pt-4">
+          <div class="flex items-center gap-4">
+            <div class="w-10 h-10 rounded-xl bg-slate-800 flex items-center justify-center text-slate-300">
+              <i class="fa-solid fa-envelope"></i>
+            </div>
+            <div>
+              <p class="text-xs text-slate-400">Official Email</p>
+              <a href="mailto:primeglobalbd99@gmail.com" class="text-sm font-semibold text-white hover:underline">primeglobalbd99@gmail.com</a>
+            </div>
+          </div>
 
-        .section-title {
-            text-align: center;
-            margin-bottom: 45px;
-        }
+          <div class="flex items-center gap-4">
+            <div class="w-10 h-10 rounded-xl bg-slate-800 flex items-center justify-center text-slate-300">
+              <i class="fa-solid fa-phone"></i>
+            </div>
+            <div>
+              <p class="text-xs text-slate-400">Phone / WhatsApp</p>
+              <a href="tel:+8801620458326" class="text-sm font-semibold text-white hover:underline">+880 1620-458326</a>
+            </div>
+          </div>
+        </div>
+      </div>
 
-        .section-title h2 {
-            font-size: 30px;
-            color: var(--text-dark);
-            font-weight: 800;
-        }
+      <!-- Email Form Block -->
+      <div class="bg-white rounded-3xl p-6 md:p-8 text-slate-800 shadow-2xl">
+        <h3 class="text-xl font-bold text-slate-900 mb-4">Send Us a Direct Email</h3>
+        <form action="https://formspree.io/f/primeglobalbd99@gmail.com" method="POST" class="space-y-4">
+          <div>
+            <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Full Name</label>
+            <input type="text" name="name" required class="w-full px-4 py-2.5 rounded-lg border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-slate-800">
+          </div>
 
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-        }
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Phone</label>
+              <input type="tel" name="phone" required class="w-full px-4 py-2.5 rounded-lg border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-slate-800">
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Email</label>
+              <input type="email" name="email" class="w-full px-4 py-2.5 rounded-lg border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-slate-800">
+            </div>
+          </div>
 
-        .service-card {
-            background: #fff;
-            padding: 30px;
-            border-radius: 12px;
-            border: 1px solid var(--border-color);
-            box-shadow: var(--shadow-sm);
-            transition: 0.3s;
-        }
+          <div>
+            <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Message</label>
+            <textarea name="message" rows="3" class="w-full px-4 py-2.5 rounded-lg border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-slate-800"></textarea>
+          </div>
 
-        .service-card:hover {
-            box-shadow: var(--shadow-md);
-            border-color: var(--accent);
-        }
+          <button type="submit" class="w-full bg-slate-900 hover:bg-slate-800 text-white font-bold py-3 rounded-lg shadow-md transition text-sm">
+            Submit Email Message
+          </button>
+        </form>
+      </div>
 
-        .service-card i {
-            font-size: 32px;
-            color: var(--accent);
-            margin-bottom: 15px;
-        }
+    </div>
+  </section>
 
-        .service-card h3 {
-            font-size: 18px;
-            color: var(--text-dark);
-            margin-bottom: 10px;
-        }
+  <!-- Minimal Footer -->
+  <footer class="bg-slate-950 text-slate-500 py-8 border-t border-slate-800 text-xs">
+    <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
+      <p class="brand-font font-bold text-slate-300">PRIME GLOBAL</p>
+      <p>© 2026 Prime Global - Visa & Air Ticketing Services. All Rights Reserved.</p>
+    </div>
+  </footer>
 
-        .service-card ul {
-            list-style: none;
-            margin-top: 15px;
-        }
+  <!-- Live Editor & Action Script -->
+  <script>
+    let isEditing = false;
 
-        .service-card ul li {
-            font-size: 13px;
-            padding: 5px 0;
-            color: #475569;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
+    function toggleEditMode() {
+      isEditing = !isEditing;
+      const editableElements = document.querySelectorAll('.editable');
+      const editBtn = document.getElementById('editBtn');
+      const editBtnText = document.getElementById('editBtnText');
 
-        /* Visas & Destinations */
-        .bg-subtle {
-            background-color: var(--bg-subtle);
-        }
+      editableElements.forEach(el => {
+        el.contentEditable = isEditing ? "true" : "false";
+      });
 
-        .dest-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 25px;
-        }
+      if (isEditing) {
+        editBtn.classList.remove('bg-slate-700');
+        editBtn.classList.add('bg-amber-600');
+        editBtnText.innerText = "Editing Mode ON";
+      } else {
+        editBtn.classList.remove('bg-amber-600');
+        editBtn.classList.add('bg-slate-700');
+        editBtnText.innerText = "Live Edit Mode";
+      }
+    }
 
-        .dest-card {
-            background: #fff;
+    function saveEdits() {
+      if (isEditing) {
+        toggleEditMode();
+      }
+      alert("All text changes saved successfully!");
+    }
+
+    function handleQuickQuery(e) {
+      e.preventDefault();
+      const name = document.getElementById('custName').value;
+      const phone = document.getElementById('custPhone').value;
+      const service = document.getElementById('custService').value;
+      const dest = document.getElementById('custDest').value;
+
+      const message = `Hello Prime Global,%0A%0AI would like to inquire about *${service}*.%0A%0A*Details:*%0A- Name: ${name}%0A- Phone: ${phone}%0A- Destination: ${dest || 'N/A'}`;
+      window.open(`https://wa.me/8801620458326?text=${message}`, '_blank');
+    }
+  </script>
+</body>
+</html>
