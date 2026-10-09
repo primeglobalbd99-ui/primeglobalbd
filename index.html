@@ -15,74 +15,46 @@
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   
   <style>
-    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #ffffff; color: #0f172a; }
     .brand-font { font-family: 'Cinzel', serif; }
     
-    .hero-gradient {
-      background: linear-gradient(135deg, rgba(255,255,255,0.96) 0%, rgba(241,245,249,0.96) 100%), 
-                  url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=1600&auto=format&fit=crop');
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
+    .hero-glow {
+      background: radial-gradient(circle at 50% 0%, rgba(14, 116, 144, 0.08) 0%, rgba(255, 255, 255, 1) 70%);
     }
-
-    @keyframes float {
-      0% { transform: translateY(0px) rotate(0deg); }
-      50% { transform: translateY(-8px) rotate(2deg); }
-      100% { transform: translateY(0px) rotate(0deg); }
-    }
-    .floating-plane { animation: float 4s ease-in-out infinite; }
 
     [contenteditable="true"] { 
-      outline: 2px dashed #0284c7 !important; 
-      background-color: rgba(2, 132, 199, 0.1); 
+      outline: 2px dashed #0e7490 !important; 
+      background-color: rgba(14, 116, 144, 0.05); 
       padding: 2px 6px; 
       border-radius: 4px; 
     }
   </style>
 </head>
-<body class="bg-slate-50 text-slate-800 antialiased selection:bg-slate-900 selection:text-white">
+<body class="antialiased selection:bg-cyan-900 selection:text-white">
 
-  <!-- Admin Control Bar -->
-  <div class="bg-slate-900 text-white py-2 px-4 text-xs flex justify-between items-center sticky top-0 z-50 shadow-md">
+  <!-- Admin Bar -->
+  <div class="bg-slate-900 text-white py-2 px-4 text-xs flex justify-between items-center sticky top-0 z-50 shadow-sm">
     <div class="flex items-center space-x-2">
-      <span class="relative flex h-2.5 w-2.5">
-        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-        <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
-      </span>
-      <span class="font-medium text-slate-300">Prime Global Admin Control Panel</span>
+      <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+      <span class="font-medium text-slate-300">Prime Global Control Panel</span>
     </div>
     <div class="flex space-x-2">
-      <button onclick="toggleEditMode()" id="editBtn" class="bg-slate-700 hover:bg-slate-600 text-white px-3 py-1 rounded transition flex items-center gap-1 font-semibold">
-        <i class="fa-solid fa-pen-to-square text-xs"></i> <span id="editBtnText">Live Edit Mode</span>
+      <button onclick="toggleEditMode()" id="editBtn" class="bg-slate-800 hover:bg-slate-700 text-white px-3 py-1 rounded transition border border-slate-700 font-semibold">
+        <i class="fa-solid fa-pen-to-square text-xs mr-1"></i> <span id="editBtnText">Live Edit Mode</span>
       </button>
-      <button onclick="saveEdits()" class="bg-emerald-600 hover:bg-emerald-500 text-white px-3 py-1 rounded transition flex items-center gap-1 font-semibold">
-        <i class="fa-solid fa-floppy-disk text-xs"></i> Save Changes
+      <button onclick="saveEdits()" class="bg-emerald-600 hover:bg-emerald-500 text-white px-3 py-1 rounded transition font-semibold">
+        <i class="fa-solid fa-floppy-disk text-xs mr-1"></i> Save
       </button>
     </div>
   </div>
 
-  <!-- Top Info Header -->
-  <div class="bg-white border-b border-slate-200 py-2 text-xs text-slate-600 hidden md:block">
-    <div class="max-w-7xl mx-auto px-4 flex justify-between items-center">
-      <div class="flex items-center gap-6">
-        <span><i class="fa-solid fa-envelope text-cyan-700 mr-1.5"></i> primeglobalbd99@gmail.com</span>
-        <span><i class="fa-solid fa-phone text-emerald-600 mr-1.5"></i> +880 1620-458326</span>
-        <span><i class="fa-solid fa-clock text-slate-400 mr-1.5"></i> Sat - Thu: 10:00 AM - 8:00 PM</span>
-      </div>
-      <div class="flex items-center gap-4 text-slate-500">
-        <a href="https://wa.me/8801620458326" target="_blank" class="hover:text-emerald-600 font-semibold"><i class="fa-brands fa-whatsapp text-sm mr-1"></i> Quick Support</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Main Navigation -->
-  <header class="bg-white/95 backdrop-blur-md border-b border-slate-200 sticky top-8 z-40 shadow-sm">
-    <div class="max-w-7xl mx-auto px-4 py-3.5 flex justify-between items-center">
+  <!-- Header -->
+  <header class="border-b border-slate-100 sticky top-8 z-40 bg-white/90 backdrop-blur-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
       
       <!-- Brand Logo -->
-      <a href="#" class="flex items-center gap-3 group">
-        <div class="w-12 h-12 md:w-14 md:h-14 bg-gradient-to-br from-slate-900 to-slate-950 rounded-xl p-2.5 shadow-md flex items-center justify-center relative">
+      <a href="#" class="flex items-center gap-3">
+        <div class="w-12 h-12 bg-slate-900 rounded-2xl p-2.5 shadow-md flex items-center justify-center">
           <svg viewBox="0 0 200 200" class="w-full h-full text-white">
             <path d="M 30,110 L 170,30 L 110,170 L 90,120 Z" fill="none" stroke="currentColor" stroke-width="12" stroke-linejoin="round"/>
             <path d="M 90,120 L 170,30" stroke="currentColor" stroke-width="10"/>
@@ -90,91 +62,87 @@
           </svg>
         </div>
         <div>
-          <h1 class="brand-font text-xl md:text-2xl font-bold tracking-widest text-slate-900 uppercase editable" id="brandTitle">PRIME GLOBAL</h1>
-          <p class="text-[9px] md:text-[11px] text-cyan-700 font-bold tracking-widest uppercase editable" id="brandSub">VISA & AIR TICKETING SERVICES</p>
+          <h1 class="brand-font text-2xl font-extrabold tracking-wider text-slate-900 uppercase editable" id="brandTitle">PRIME GLOBAL</h1>
+          <p class="text-[10px] text-cyan-800 font-bold tracking-widest uppercase editable" id="brandSub">VISA & AIR TICKETING SERVICES</p>
         </div>
       </a>
 
-      <!-- Menu Items -->
-      <nav class="hidden lg:flex items-center gap-8 font-semibold text-sm text-slate-700">
-        <a href="#home" class="hover:text-cyan-700 transition">Home</a>
-        <a href="#medical-special" class="hover:text-cyan-700 transition">India Medical Visa</a>
-        <a href="#destinations" class="hover:text-cyan-700 transition">Visa Destinations</a>
-        <a href="#air-ticketing" class="hover:text-cyan-700 transition">Air Ticketing</a>
-        <a href="#contact" class="hover:text-cyan-700 transition">Contact Us</a>
-      </nav>
-
-      <!-- Action Button -->
-      <a href="https://wa.me/8801620458326" target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2.5 rounded-xl text-xs md:text-sm font-bold shadow-md transition flex items-center gap-2">
-        <i class="fa-brands fa-whatsapp text-lg"></i>
-        <span>WhatsApp Chat</span>
-      </a>
+      <!-- Quick Contact Info -->
+      <div class="hidden md:flex items-center gap-6 text-xs font-semibold text-slate-600">
+        <a href="mailto:primeglobalbd99@gmail.com" class="hover:text-cyan-700"><i class="fa-solid fa-envelope mr-1.5 text-slate-400"></i>primeglobalbd99@gmail.com</a>
+        <a href="tel:+8801620458326" class="hover:text-cyan-700"><i class="fa-solid fa-phone mr-1.5 text-slate-400"></i>+880 1620-458326</a>
+        <a href="https://wa.me/8801620458326" target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded-xl transition shadow-sm font-bold flex items-center gap-1.5">
+          <i class="fa-brands fa-whatsapp text-sm"></i> WhatsApp
+        </a>
+      </div>
 
     </div>
   </header>
 
   <!-- Hero Section -->
-  <section id="home" class="hero-gradient py-16 md:py-24 border-b border-slate-200 relative">
+  <section class="hero-glow py-16 md:py-24 border-b border-slate-100">
     <div class="max-w-7xl mx-auto px-4 grid lg:grid-cols-12 gap-12 items-center">
       
-      <!-- Hero Content -->
+      <!-- Text Area -->
       <div class="lg:col-span-7 space-y-6">
-        <div class="inline-flex items-center gap-2 px-3 py-1 bg-white border border-slate-200 rounded-full text-xs font-bold text-cyan-800 shadow-sm">
-          <i class="fa-solid fa-plane-up text-cyan-600 floating-plane"></i>
-          <span>Trusted Visa & Medical Tourism Consultancy</span>
-        </div>
-
-        <h2 class="text-3xl sm:text-5xl font-extrabold text-slate-900 leading-tight tracking-tight editable" id="heroTitle">
-          Expert India Medical Visa, Asia Visas & Air Ticketing Services
+        <span class="inline-block bg-cyan-50 border border-cyan-200 text-cyan-800 text-xs px-3.5 py-1.5 rounded-full font-bold uppercase tracking-wider">
+          Official Visa & Air Travel Agency
+        </span>
+        
+        <h2 class="text-4xl sm:text-6xl font-extrabold text-slate-900 leading-[1.15] tracking-tight editable" id="heroTitle">
+          Seamless Visa Solutions & Direct Flight Bookings
         </h2>
 
         <p class="text-slate-600 text-base sm:text-lg leading-relaxed editable" id="heroDesc">
-          Specialized in **India Double Entry, Multiple & Medical Visas with FREE Doctor Consultation & Hospital Appointments**. We also process Tourist & Business Visas for **Malaysia, Thailand, China, Maldives** and lowest fare **Air Tickets**.
+          We specialize in **India Double Entry, Multiple & Medical Visas** with complimentary doctor consultation and hospital support. We also process visas for **Malaysia, Thailand, China, Maldives** and cheap **Air Ticketing**.
         </p>
 
-        <!-- Dynamic Service Pills -->
-        <div class="flex flex-wrap gap-2 pt-2">
-          <span class="bg-white border border-slate-200 text-slate-800 px-3 py-1.5 rounded-lg text-xs font-bold shadow-sm"><i class="fa-solid fa-user-doctor text-rose-500 mr-1.5"></i> Free Doctor Consultation</span>
-          <span class="bg-white border border-slate-200 text-slate-800 px-3 py-1.5 rounded-lg text-xs font-bold shadow-sm"><i class="fa-solid fa-hospital text-cyan-600 mr-1.5"></i> Hospital & Doctor Appointment</span>
-          <span class="bg-white border border-slate-200 text-slate-800 px-3 py-1.5 rounded-lg text-xs font-bold shadow-sm"><i class="fa-solid fa-plane text-emerald-600 mr-1.5"></i> Worldwide Air Ticket</span>
+        <!-- Feature Pills -->
+        <div class="flex flex-wrap gap-3 pt-2">
+          <div class="flex items-center gap-2 bg-slate-50 border border-slate-200 px-3.5 py-2 rounded-xl text-xs font-bold text-slate-700">
+            <i class="fa-solid fa-user-doctor text-rose-500 text-sm"></i> Free Doctor Consultation
+          </div>
+          <div class="flex items-center gap-2 bg-slate-50 border border-slate-200 px-3.5 py-2 rounded-xl text-xs font-bold text-slate-700">
+            <i class="fa-solid fa-hospital text-cyan-600 text-sm"></i> Hospital & Appointment
+          </div>
+          <div class="flex items-center gap-2 bg-slate-50 border border-slate-200 px-3.5 py-2 rounded-xl text-xs font-bold text-slate-700">
+            <i class="fa-solid fa-plane text-emerald-600 text-sm"></i> Lowest Air Fares
+          </div>
         </div>
       </div>
 
-      <!-- Quick Inquiry Form Box -->
+      <!-- Quick Action Card -->
       <div class="lg:col-span-5">
-        <div class="bg-white/95 border border-slate-200 rounded-3xl p-6 md:p-8 shadow-2xl backdrop-blur-md">
-          <div class="flex border-b border-slate-200 mb-6">
-            <button class="pb-3 px-2 font-bold text-sm text-slate-900 border-b-2 border-cyan-700 flex items-center gap-2">
-              <i class="fa-solid fa-paper-plane text-cyan-700"></i> Quick Visa & Flight Inquiry
-            </button>
-          </div>
+        <div class="bg-white border border-slate-200 rounded-3xl p-6 md:p-8 shadow-xl relative">
+          <h3 class="text-lg font-bold text-slate-900 mb-1">Send Direct Visa Query</h3>
+          <p class="text-xs text-slate-500 mb-6">Fill in details for instant response via WhatsApp.</p>
 
           <form onsubmit="handleQuickQuery(event)" class="space-y-4">
             <div>
-              <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Your Name *</label>
-              <input type="text" id="custName" required placeholder="e.g. Md. Rahim" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-slate-900 text-sm">
+              <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Your Name</label>
+              <input type="text" id="custName" required placeholder="Full Name" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 text-sm focus:outline-none focus:bg-white focus:ring-2 focus:ring-cyan-700">
             </div>
 
             <div>
-              <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Phone / WhatsApp Number *</label>
-              <input type="tel" id="custPhone" required placeholder="01700000000" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-slate-900 text-sm">
+              <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Phone / WhatsApp</label>
+              <input type="tel" id="custPhone" required placeholder="01700000000" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 text-sm focus:outline-none focus:bg-white focus:ring-2 focus:ring-cyan-700">
             </div>
 
             <div>
-              <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Select Required Service</label>
-              <select id="custService" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-slate-900 text-sm font-medium">
+              <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Required Service</label>
+              <select id="custService" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 text-sm font-medium focus:outline-none focus:bg-white focus:ring-2 focus:ring-cyan-700">
                 <option>India Medical Visa + Free Consultation</option>
-                <option>India Tourist Visa (Double / Multiple Entry)</option>
+                <option>India Tourist Visa (Double/Multiple Entry)</option>
                 <option>Malaysia Tourist / Business Visa</option>
-                <option>Thailand Tourist Visa</option>
+                <option>Thailand Tourist Sticker Visa</option>
                 <option>China Business / Tourist Visa</option>
-                <option>Maldives Visa & Hotel Package</option>
-                <option>Air Ticket Booking (Domestic & International)</option>
+                <option>Maldives Package & Visa</option>
+                <option>Air Ticketing (Domestic & International)</option>
               </select>
             </div>
 
-            <button type="submit" class="w-full bg-slate-900 hover:bg-slate-800 text-white font-bold py-3.5 rounded-xl shadow-lg transition duration-200 text-sm mt-2 flex items-center justify-center gap-2">
-              <i class="fa-brands fa-whatsapp text-lg text-emerald-400"></i> Send Inquiry via WhatsApp
+            <button type="submit" class="w-full bg-slate-900 hover:bg-slate-800 text-white font-bold py-3.5 rounded-xl transition shadow-md text-sm mt-2 flex items-center justify-center gap-2">
+              <i class="fa-brands fa-whatsapp text-lg text-emerald-400"></i> Request via WhatsApp
             </button>
           </form>
         </div>
@@ -183,52 +151,48 @@
     </div>
   </section>
 
-  <!-- INDIA MEDICAL TOURISM SPECIAL SECTION -->
-  <section id="medical-special" class="py-20 bg-gradient-to-b from-slate-900 to-slate-950 text-white">
+  <!-- India Medical Special Section -->
+  <section class="py-20 bg-slate-900 text-white">
     <div class="max-w-7xl mx-auto px-4">
       
-      <div class="text-center max-w-3xl mx-auto mb-16">
-        <span class="bg-rose-500/20 text-rose-300 border border-rose-500/30 text-xs px-3 py-1 rounded-full font-bold uppercase tracking-wider">
-          Special Medical Tourism Hub
-        </span>
-        <h2 class="text-3xl md:text-4xl font-extrabold mt-3">India Medical Visa & Complete Patient Support</h2>
-        <p class="text-slate-400 text-sm mt-3 leading-relaxed">
-          Complete medical travel support for patients from Bangladesh going to India. From doctor recommendation to visa file preparation and hospital invitation letters.
-        </p>
+      <div class="max-w-2xl mb-12">
+        <span class="text-rose-400 text-xs font-bold uppercase tracking-widest">Specialized Healthcare Travel</span>
+        <h2 class="text-3xl font-extrabold mt-2">India Medical Visa & Hospital Care Services</h2>
+        <p class="text-slate-400 text-sm mt-2">We assist patients with fast visa processing, doctor selection, and guaranteed hospital appointment letters.</p>
       </div>
 
       <div class="grid md:grid-cols-4 gap-6">
         
-        <div class="bg-slate-800/60 border border-slate-700/60 p-6 rounded-2xl hover:border-rose-500/50 transition">
-          <div class="w-12 h-12 bg-rose-500/10 text-rose-400 rounded-xl flex items-center justify-center text-2xl mb-4">
-            <i class="fa-solid fa-user-doctor"></i>
+        <div class="p-6 rounded-2xl bg-slate-800/50 border border-slate-700">
+          <div class="w-10 h-10 rounded-xl bg-rose-500/10 text-rose-400 flex items-center justify-center text-xl mb-4">
+            <i class="fa-solid fa-stethoscope"></i>
           </div>
-          <h3 class="font-bold text-lg text-white mb-2">Free Doctor Consultation</h3>
-          <p class="text-xs text-slate-400 leading-relaxed">Free medical file assessment and top doctor matching based on patient condition.</p>
+          <h4 class="font-bold text-base text-white mb-2">Free Consultation</h4>
+          <p class="text-xs text-slate-400 leading-relaxed">Free primary assessment of treatment options and matching doctors.</p>
         </div>
 
-        <div class="bg-slate-800/60 border border-slate-700/60 p-6 rounded-2xl hover:border-cyan-500/50 transition">
-          <div class="w-12 h-12 bg-cyan-500/10 text-cyan-400 rounded-xl flex items-center justify-center text-2xl mb-4">
-            <i class="fa-solid fa-hospital"></i>
+        <div class="p-6 rounded-2xl bg-slate-800/50 border border-slate-700">
+          <div class="w-10 h-10 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center text-xl mb-4">
+            <i class="fa-solid fa-hospital-user"></i>
           </div>
-          <h3 class="font-bold text-lg text-white mb-2">Hospital Booking</h3>
-          <p class="text-xs text-slate-400 leading-relaxed">Direct connection with top hospitals in Chennai, Kolkata, Delhi, Bangalore & Hyderabad.</p>
+          <h4 class="font-bold text-base text-white mb-2">Hospital Booking</h4>
+          <p class="text-xs text-slate-400 leading-relaxed">Arrangements in Apollo, Fortis, Max, Manipal & Chennai/Kolkata hospitals.</p>
         </div>
 
-        <div class="bg-slate-800/60 border border-slate-700/60 p-6 rounded-2xl hover:border-emerald-500/50 transition">
-          <div class="w-12 h-12 bg-emerald-500/10 text-emerald-400 rounded-xl flex items-center justify-center text-2xl mb-4">
-            <i class="fa-solid fa-calendar-check"></i>
+        <div class="p-6 rounded-2xl bg-slate-800/50 border border-slate-700">
+          <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-xl mb-4">
+            <i class="fa-solid fa-file-medical"></i>
           </div>
-          <h3 class="font-bold text-lg text-white mb-2">Doctor Appointment</h3>
-          <p class="text-xs text-slate-400 leading-relaxed">Fast-track specialist doctor appointments along with official hospital invitation letters for visa.</p>
+          <h4 class="font-bold text-base text-white mb-2">Doctor Appointment</h4>
+          <p class="text-xs text-slate-400 leading-relaxed">Official doctor appointment & visa invitation letters within 24-48 hours.</p>
         </div>
 
-        <div class="bg-slate-800/60 border border-slate-700/60 p-6 rounded-2xl hover:border-amber-500/50 transition">
-          <div class="w-12 h-12 bg-amber-500/10 text-amber-400 rounded-xl flex items-center justify-center text-2xl mb-4">
+        <div class="p-6 rounded-2xl bg-slate-800/50 border border-slate-700">
+          <div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center text-xl mb-4">
             <i class="fa-solid fa-passport"></i>
           </div>
-          <h3 class="font-bold text-lg text-white mb-2">Medical Visa File</h3>
-          <p class="text-xs text-slate-400 leading-relaxed">Proper file processing for Double Entry, Multiple Entry, or Medical Attendant Visas.</p>
+          <h4 class="font-bold text-base text-white mb-2">Attendant Visa</h4>
+          <p class="text-xs text-slate-400 leading-relaxed">Complete file processing for patient and medical attendant double entry visas.</p>
         </div>
 
       </div>
@@ -236,114 +200,114 @@
     </div>
   </section>
 
-  <!-- DESTINATIONS & REQUIREMENTS SECTION WITH WALLPAPERS -->
-  <section id="destinations" class="py-20 bg-white">
+  <!-- Destination Visa Cards -->
+  <section class="py-20 bg-slate-50">
     <div class="max-w-7xl mx-auto px-4">
       
-      <div class="text-center max-w-2xl mx-auto mb-16">
-        <p class="text-xs font-bold text-cyan-700 uppercase tracking-widest mb-2">Visa Destinations</p>
-        <h2 class="text-3xl font-extrabold text-slate-900">Countries We Process Visas For</h2>
+      <div class="text-center max-w-xl mx-auto mb-16">
+        <p class="text-xs font-bold text-cyan-800 uppercase tracking-widest mb-1">Destinations</p>
+        <h2 class="text-3xl font-extrabold text-slate-900">Visa Services & Requirements</h2>
       </div>
 
       <div class="grid md:grid-cols-3 gap-8">
         
-        <!-- Country 1: India -->
-        <div class="bg-slate-50 border border-slate-200 rounded-3xl overflow-hidden hover:shadow-xl transition group">
-          <div class="h-48 overflow-hidden relative">
-            <img src="https://images.unsplash.com/photo-1564507592333-c60657eea523?q=80&w=800&auto=format&fit=crop" alt="India Taj Mahal" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-            <span class="absolute top-3 right-3 bg-slate-900/80 text-white text-[10px] font-bold px-3 py-1 rounded-full backdrop-blur-sm">India Visas</span>
+        <!-- India Card -->
+        <div class="bg-white border border-slate-200 rounded-3xl overflow-hidden shadow-sm hover:shadow-lg transition">
+          <div class="h-44 bg-slate-800 relative">
+            <img src="https://images.unsplash.com/photo-1564507592333-c60657eea523?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover opacity-80" alt="India">
+            <span class="absolute top-3 right-3 bg-slate-900 text-white text-[10px] font-bold px-3 py-1 rounded-full">India Visas</span>
           </div>
           <div class="p-6">
-            <h3 class="text-xl font-bold text-slate-900 mb-2">India (Double / Multiple / Medical)</h3>
+            <h3 class="text-lg font-bold text-slate-900 mb-2">India (Double / Multiple / Medical)</h3>
             <ul class="text-xs text-slate-600 space-y-2 mb-6">
-              <li><i class="fa-solid fa-circle-check text-emerald-600 mr-2"></i>Double & Multiple Entry Tourist Visa</li>
-              <li><i class="fa-solid fa-circle-check text-emerald-600 mr-2"></i>Medical Visa with Hospital Invitation</li>
-              <li><i class="fa-solid fa-circle-check text-emerald-600 mr-2"></i>Passport + Bank Statement + NID/Utility Bill</li>
+              <li><i class="fa-solid fa-check text-cyan-700 mr-2"></i>Double & Multiple Entry Tourist Visa</li>
+              <li><i class="fa-solid fa-check text-cyan-700 mr-2"></i>Medical Visa + Doctor Invitation</li>
+              <li><i class="fa-solid fa-check text-cyan-700 mr-2"></i>Passport, Bank Statement & NID/Utility Bill</li>
             </ul>
-            <a href="https://wa.me/8801620458326?text=I%20need%20info%20about%20India%20Visa" target="_blank" class="block text-center bg-slate-900 hover:bg-slate-800 text-white font-bold py-2.5 rounded-xl text-xs transition">Apply For India Visa</a>
+            <a href="https://wa.me/8801620458326?text=I%20need%20India%20Visa" target="_blank" class="block text-center bg-slate-900 hover:bg-slate-800 text-white font-bold py-2.5 rounded-xl text-xs transition">Inquire Now</a>
           </div>
         </div>
 
-        <!-- Country 2: Malaysia -->
-        <div class="bg-slate-50 border border-slate-200 rounded-3xl overflow-hidden hover:shadow-xl transition group">
-          <div class="h-48 overflow-hidden relative">
-            <img src="https://images.unsplash.com/photo-1596422846543-75c6fc197f07?q=80&w=800&auto=format&fit=crop" alt="Malaysia Petronas" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-            <span class="absolute top-3 right-3 bg-slate-900/80 text-white text-[10px] font-bold px-3 py-1 rounded-full backdrop-blur-sm">Malaysia Visas</span>
+        <!-- Malaysia Card -->
+        <div class="bg-white border border-slate-200 rounded-3xl overflow-hidden shadow-sm hover:shadow-lg transition">
+          <div class="h-44 bg-slate-800 relative">
+            <img src="https://images.unsplash.com/photo-1596422846543-75c6fc197f07?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover opacity-80" alt="Malaysia">
+            <span class="absolute top-3 right-3 bg-slate-900 text-white text-[10px] font-bold px-3 py-1 rounded-full">Malaysia</span>
           </div>
           <div class="p-6">
-            <h3 class="text-xl font-bold text-slate-900 mb-2">Malaysia (Tourist & Business)</h3>
+            <h3 class="text-lg font-bold text-slate-900 mb-2">Malaysia (Tourist & Business)</h3>
             <ul class="text-xs text-slate-600 space-y-2 mb-6">
-              <li><i class="fa-solid fa-circle-check text-emerald-600 mr-2"></i>Tourist E-Visa & Business Visa</li>
-              <li><i class="fa-solid fa-circle-check text-emerald-600 mr-2"></i>Fast 3-5 Working Days Approval</li>
-              <li><i class="fa-solid fa-circle-check text-emerald-600 mr-2"></i>Passport Copy + White Background Photo</li>
+              <li><i class="fa-solid fa-check text-cyan-700 mr-2"></i>Tourist E-Visa & Business Visa</li>
+              <li><i class="fa-solid fa-check text-cyan-700 mr-2"></i>Express Approval (3-5 Days)</li>
+              <li><i class="fa-solid fa-check text-cyan-700 mr-2"></i>Passport Scan + White Background Photo</li>
             </ul>
-            <a href="https://wa.me/8801620458326?text=I%20need%20info%20about%20Malaysia%20Visa" target="_blank" class="block text-center bg-slate-900 hover:bg-slate-800 text-white font-bold py-2.5 rounded-xl text-xs transition">Apply For Malaysia Visa</a>
+            <a href="https://wa.me/8801620458326?text=I%20need%20Malaysia%20Visa" target="_blank" class="block text-center bg-slate-900 hover:bg-slate-800 text-white font-bold py-2.5 rounded-xl text-xs transition">Inquire Now</a>
           </div>
         </div>
 
-        <!-- Country 3: Thailand -->
-        <div class="bg-slate-50 border border-slate-200 rounded-3xl overflow-hidden hover:shadow-xl transition group">
-          <div class="h-48 overflow-hidden relative">
-            <img src="https://images.unsplash.com/photo-1508009603885-50cf7c579365?q=80&w=800&auto=format&fit=crop" alt="Thailand Temple" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-            <span class="absolute top-3 right-3 bg-slate-900/80 text-white text-[10px] font-bold px-3 py-1 rounded-full backdrop-blur-sm">Thailand Visa</span>
+        <!-- Thailand Card -->
+        <div class="bg-white border border-slate-200 rounded-3xl overflow-hidden shadow-sm hover:shadow-lg transition">
+          <div class="h-44 bg-slate-800 relative">
+            <img src="https://images.unsplash.com/photo-1508009603885-50cf7c579365?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover opacity-80" alt="Thailand">
+            <span class="absolute top-3 right-3 bg-slate-900 text-white text-[10px] font-bold px-3 py-1 rounded-full">Thailand</span>
           </div>
           <div class="p-6">
-            <h3 class="text-xl font-bold text-slate-900 mb-2">Thailand (Tourist Sticker)</h3>
+            <h3 class="text-lg font-bold text-slate-900 mb-2">Thailand (Tourist Sticker Visa)</h3>
             <ul class="text-xs text-slate-600 space-y-2 mb-6">
-              <li><i class="fa-solid fa-circle-check text-emerald-600 mr-2"></i>6 Month Single Entry Sticker Visa</li>
-              <li><i class="fa-solid fa-circle-check text-emerald-600 mr-2"></i>Bank Solvency & 6 Month Statement</li>
-              <li><i class="fa-solid fa-circle-check text-emerald-600 mr-2"></i>Air Ticket & Hotel Booking Vouchers</li>
+              <li><i class="fa-solid fa-check text-cyan-700 mr-2"></i>Single Entry 6-Month Sticker Visa</li>
+              <li><i class="fa-solid fa-check text-cyan-700 mr-2"></i>Bank Solvency & Statement Required</li>
+              <li><i class="fa-solid fa-check text-cyan-700 mr-2"></i>Hotel & Air Booking Vouchers</li>
             </ul>
-            <a href="https://wa.me/8801620458326?text=I%20need%20info%20about%20Thailand%20Visa" target="_blank" class="block text-center bg-slate-900 hover:bg-slate-800 text-white font-bold py-2.5 rounded-xl text-xs transition">Apply For Thailand Visa</a>
+            <a href="https://wa.me/8801620458326?text=I%20need%20Thailand%20Visa" target="_blank" class="block text-center bg-slate-900 hover:bg-slate-800 text-white font-bold py-2.5 rounded-xl text-xs transition">Inquire Now</a>
           </div>
         </div>
 
-        <!-- Country 4: China -->
-        <div class="bg-slate-50 border border-slate-200 rounded-3xl overflow-hidden hover:shadow-xl transition group">
-          <div class="h-48 overflow-hidden relative">
-            <img src="https://images.unsplash.com/photo-1508804185872-d7badad00f7d?q=80&w=800&auto=format&fit=crop" alt="China Wall" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-            <span class="absolute top-3 right-3 bg-slate-900/80 text-white text-[10px] font-bold px-3 py-1 rounded-full backdrop-blur-sm">China Visa</span>
+        <!-- China Card -->
+        <div class="bg-white border border-slate-200 rounded-3xl overflow-hidden shadow-sm hover:shadow-lg transition">
+          <div class="h-44 bg-slate-800 relative">
+            <img src="https://images.unsplash.com/photo-1508804185872-d7badad00f7d?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover opacity-80" alt="China">
+            <span class="absolute top-3 right-3 bg-slate-900 text-white text-[10px] font-bold px-3 py-1 rounded-full">China</span>
           </div>
           <div class="p-6">
-            <h3 class="text-xl font-bold text-slate-900 mb-2">China (Tourist & Business M)</h3>
+            <h3 class="text-lg font-bold text-slate-900 mb-2">China (Business M / Tourist L)</h3>
             <ul class="text-xs text-slate-600 space-y-2 mb-6">
-              <li><i class="fa-solid fa-circle-check text-emerald-600 mr-2"></i>L Tourist & M Business Invitation Visa</li>
-              <li><i class="fa-solid fa-circle-check text-emerald-600 mr-2"></i>Full File Preparation & Appointment</li>
-              <li><i class="fa-solid fa-circle-check text-emerald-600 mr-2"></i>Trade License / Job NOC Required</li>
+              <li><i class="fa-solid fa-check text-cyan-700 mr-2"></i>Invitation Letter & File Assistance</li>
+              <li><i class="fa-solid fa-check text-cyan-700 mr-2"></i>Appointment & File Submission Support</li>
+              <li><i class="fa-solid fa-check text-cyan-700 mr-2"></i>Trade License / Job NOC Documents</li>
             </ul>
-            <a href="https://wa.me/8801620458326?text=I%20need%20info%20about%20China%20Visa" target="_blank" class="block text-center bg-slate-900 hover:bg-slate-800 text-white font-bold py-2.5 rounded-xl text-xs transition">Apply For China Visa</a>
+            <a href="https://wa.me/8801620458326?text=I%20need%20China%20Visa" target="_blank" class="block text-center bg-slate-900 hover:bg-slate-800 text-white font-bold py-2.5 rounded-xl text-xs transition">Inquire Now</a>
           </div>
         </div>
 
-        <!-- Country 5: Maldives -->
-        <div class="bg-slate-50 border border-slate-200 rounded-3xl overflow-hidden hover:shadow-xl transition group">
-          <div class="h-48 overflow-hidden relative">
-            <img src="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?q=80&w=800&auto=format&fit=crop" alt="Maldives Beach" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-            <span class="absolute top-3 right-3 bg-slate-900/80 text-white text-[10px] font-bold px-3 py-1 rounded-full backdrop-blur-sm">Maldives Visa</span>
+        <!-- Maldives Card -->
+        <div class="bg-white border border-slate-200 rounded-3xl overflow-hidden shadow-sm hover:shadow-lg transition">
+          <div class="h-44 bg-slate-800 relative">
+            <img src="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover opacity-80" alt="Maldives">
+            <span class="absolute top-3 right-3 bg-slate-900 text-white text-[10px] font-bold px-3 py-1 rounded-full">Maldives</span>
           </div>
           <div class="p-6">
-            <h3 class="text-xl font-bold text-slate-900 mb-2">Maldives (On Arrival & Package)</h3>
+            <h3 class="text-lg font-bold text-slate-900 mb-2">Maldives (On Arrival & Package)</h3>
             <ul class="text-xs text-slate-600 space-y-2 mb-6">
-              <li><i class="fa-solid fa-circle-check text-emerald-600 mr-2"></i>On-Arrival Assistance & IMUGA Form</li>
-              <li><i class="fa-solid fa-circle-check text-emerald-600 mr-2"></i>Confirmed Resort & Hotel Bookings</li>
-              <li><i class="fa-solid fa-circle-check text-emerald-600 mr-2"></i>Honeymoon & Family Customized Packages</li>
+              <li><i class="fa-solid fa-check text-cyan-700 mr-2"></i>IMUGA Form & On-Arrival Guidance</li>
+              <li><i class="fa-solid fa-check text-cyan-700 mr-2"></i>Resort & Beach Hotel Reservations</li>
+              <li><i class="fa-solid fa-check text-cyan-700 mr-2"></i>Honeymoon & Family Customized Packages</li>
             </ul>
-            <a href="https://wa.me/8801620458326?text=I%20need%20info%20about%20Maldives%20Package" target="_blank" class="block text-center bg-slate-900 hover:bg-slate-800 text-white font-bold py-2.5 rounded-xl text-xs transition">Apply For Maldives</a>
+            <a href="https://wa.me/8801620458326?text=I%20need%20Maldives%20Package" target="_blank" class="block text-center bg-slate-900 hover:bg-slate-800 text-white font-bold py-2.5 rounded-xl text-xs transition">Inquire Now</a>
           </div>
         </div>
 
-        <!-- Country 6: Air Ticketing Hub -->
-        <div id="air-ticketing" class="bg-slate-900 text-white rounded-3xl overflow-hidden p-8 flex flex-col justify-between shadow-xl">
+        <!-- Air Ticketing Card -->
+        <div class="bg-slate-900 text-white rounded-3xl p-6 flex flex-col justify-between shadow-md">
           <div>
-            <div class="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center text-2xl text-cyan-400 mb-6">
+            <div class="w-10 h-10 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center text-xl mb-4">
               <i class="fa-solid fa-plane"></i>
             </div>
-            <h3 class="text-2xl font-bold mb-3">Air Ticketing Service</h3>
-            <p class="text-slate-300 text-xs leading-relaxed mb-6">
-              Lowest fares for Biman Bangladesh, US-Bangla, Air Asia, Indigo, Emirates, Singapore Airlines & all worldwide flights.
+            <h3 class="text-xl font-bold mb-2">Air Ticketing Hub</h3>
+            <p class="text-slate-400 text-xs leading-relaxed mb-6">
+              Lowest fares for Biman Bangladesh, US-Bangla, Air Asia, Indigo, Emirates, Singapore Airlines & worldwide flights.
             </p>
           </div>
-          <a href="https://wa.me/8801620458326?text=I%20need%20Air%20Ticket%20Booking" target="_blank" class="block text-center bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3 rounded-xl text-xs transition">Book Flight Ticket</a>
+          <a href="https://wa.me/8801620458326?text=I%20need%20Air%20Ticket" target="_blank" class="block text-center bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-2.5 rounded-xl text-xs transition">Book Flight Ticket</a>
         </div>
 
       </div>
@@ -351,67 +315,67 @@
     </div>
   </section>
 
-  <!-- CONTACT & EMAIL SECTION -->
-  <section id="contact" class="py-20 bg-slate-950 text-white">
+  <!-- Contact & Email Section -->
+  <section class="py-20 bg-white border-t border-slate-100">
     <div class="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center">
       
       <div class="space-y-6">
-        <p class="text-xs font-bold text-cyan-400 uppercase tracking-widest">Contact Prime Global</p>
-        <h2 class="text-3xl font-extrabold">Get In Touch With Our Visa Experts</h2>
-        <p class="text-slate-400 text-sm leading-relaxed">
-          Reach out to us via email or phone for instant assistance regarding visa processing, medical consultations, or flight tickets.
+        <span class="text-xs font-bold text-cyan-800 uppercase tracking-widest">Get In Touch</span>
+        <h2 class="text-3xl font-extrabold text-slate-900">Have Questions? Contact Us Today</h2>
+        <p class="text-slate-600 text-sm leading-relaxed">
+          Send us an email or give us a call for authentic visa processing and flight ticket bookings.
         </p>
 
-        <div class="space-y-4 pt-4">
-          <div class="flex items-center gap-4">
-            <div class="w-12 h-12 rounded-xl bg-slate-800 flex items-center justify-center text-cyan-400">
-              <i class="fa-solid fa-envelope text-lg"></i>
+        <div class="space-y-4 pt-2">
+          <div class="flex items-center gap-4 p-4 rounded-2xl bg-slate-50 border border-slate-100">
+            <div class="w-10 h-10 rounded-xl bg-cyan-100 text-cyan-800 flex items-center justify-center text-lg">
+              <i class="fa-solid fa-envelope"></i>
             </div>
             <div>
               <p class="text-xs text-slate-400">Official Email</p>
-              <a href="mailto:primeglobalbd99@gmail.com" class="text-sm font-semibold text-white hover:underline">primeglobalbd99@gmail.com</a>
+              <a href="mailto:primeglobalbd99@gmail.com" class="text-sm font-semibold text-slate-800 hover:text-cyan-700">primeglobalbd99@gmail.com</a>
             </div>
           </div>
 
-          <div class="flex items-center gap-4">
-            <div class="w-12 h-12 rounded-xl bg-slate-800 flex items-center justify-center text-emerald-400">
-              <i class="fa-solid fa-phone text-lg"></i>
+          <div class="flex items-center gap-4 p-4 rounded-2xl bg-slate-50 border border-slate-100">
+            <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-800 flex items-center justify-center text-lg">
+              <i class="fa-solid fa-phone"></i>
             </div>
             <div>
               <p class="text-xs text-slate-400">Call / WhatsApp Hotline</p>
-              <a href="tel:+8801620458326" class="text-sm font-semibold text-white hover:underline">+880 1620-458326</a>
+              <a href="tel:+8801620458326" class="text-sm font-semibold text-slate-800 hover:text-emerald-700">+880 1620-458326</a>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Form Box -->
-      <div class="bg-white rounded-3xl p-6 md:p-8 text-slate-800 shadow-2xl">
-        <h3 class="text-xl font-bold text-slate-900 mb-4">Send Us a Message</h3>
+      <!-- Email Form Box -->
+      <div class="bg-slate-50 border border-slate-200 rounded-3xl p-6 md:p-8 shadow-sm">
+        <h3 class="text-lg font-bold text-slate-900 mb-4">Send Message via Email</h3>
         <form action="https://formspree.io/f/primeglobalbd99@gmail.com" method="POST" class="space-y-4">
           <div>
             <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Your Name</label>
-            <input type="text" name="name" required class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-slate-900">
+            <input type="text" name="name" required class="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-slate-900">
           </div>
 
           <div class="grid grid-cols-2 gap-4">
             <div>
               <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Phone</label>
-              <input type="tel" name="phone" required class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-slate-900">
+              <input type="tel" name="phone" required class="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-slate-900">
             </div>
             <div>
               <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Email</label>
-              <input type="email" name="email" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-slate-900">
+              <input type="email" name="email" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-slate-900">
             </div>
           </div>
 
           <div>
             <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Message Details</label>
-            <textarea name="message" rows="3" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-slate-900"></textarea>
+            <textarea name="message" rows="3" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-slate-900"></textarea>
           </div>
 
-          <button type="submit" class="w-full bg-slate-900 hover:bg-slate-800 text-white font-bold py-3.5 rounded-xl shadow-md transition text-sm">
-            Submit Message
+          <button type="submit" class="w-full bg-slate-900 hover:bg-slate-800 text-white font-bold py-3.5 rounded-xl transition text-sm">
+            Send Email
           </button>
         </form>
       </div>
@@ -420,12 +384,12 @@
   </section>
 
   <!-- Footer -->
-  <footer class="bg-slate-950 text-slate-500 py-8 border-t border-slate-900 text-xs text-center">
-    <p class="brand-font font-bold text-slate-300 text-lg mb-2">PRIME GLOBAL</p>
+  <footer class="bg-slate-900 text-slate-400 py-8 text-xs text-center border-t border-slate-800">
+    <p class="brand-font font-bold text-white text-lg mb-1">PRIME GLOBAL</p>
     <p>© 2026 Prime Global - Visa & Air Ticketing Services. All Rights Reserved.</p>
   </footer>
 
-  <!-- Live Editor Script -->
+  <!-- Script -->
   <script>
     let isEditing = false;
 
@@ -440,12 +404,12 @@
       });
 
       if (isEditing) {
-        editBtn.classList.remove('bg-slate-700');
+        editBtn.classList.remove('bg-slate-800');
         editBtn.classList.add('bg-amber-600');
         editBtnText.innerText = "Editing Mode ON";
       } else {
         editBtn.classList.remove('bg-amber-600');
-        editBtn.classList.add('bg-slate-700');
+        editBtn.classList.add('bg-slate-800');
         editBtnText.innerText = "Live Edit Mode";
       }
     }
